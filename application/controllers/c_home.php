@@ -17,12 +17,9 @@ class C_home extends CI_Controller {
             $this->load->view('v_home', $data);
         } else {
             //If no session, redirect to login page
-
             echo "You don't have right to access this page! ";
             echo '<a href = "' . site_url('C_login') . '"> Sign In </a>';
             echo ' first';
-
-
             //redirect('c_login', 'refresh');
         }
         //$this->load->view('v_home');
@@ -49,72 +46,70 @@ class C_home extends CI_Controller {
     }
 
     public function store() {
+        $view_data = array();
+
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('bookid', 'Book ID', 'required');
+        $this->form_validation->set_rules('bookid', 'Book ID', 'required|callback_bookrule');
         $this->form_validation->set_rules('bookname', 'Book Name', 'required');
         $this->form_validation->set_rules('type', 'Type', 'required');
         $this->form_validation->set_rules('pcs', 'Quantity', 'required|integer');
 
-        $bookid = $this->input->post('bookid');
-        $bookname = $this->input->post('bookname');
-        $pcs = $this->input->post('pcs');
-
-        $this->db->select('*');
-        $this->db->from('books');
-        $this->db->where('book_id', $bookid);
-        $this->db->where('name', $bookname);
-
-        $query = $this->db->get();
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('v_home');
-        } else if (($bookid = $query->result()) && ($bookname = $query->result())) {
-            //$this->load->view('v_add', $bookid, $bookname, $pcs);
+        if ($this->form_validation->run() == TRUE) {
 
             $bookid = $this->input->post('bookid');
-
-
             $bookname = $this->input->post('bookname');
-            echo 'Book ID: ' . $bookid;
-            echo ' and Book Name: ' . $bookname;
-            echo ' already exist! The quantity will automatically added';
 
+            /**
+             * echo 'Book ID: ' . $bookid;
+             *
+              echo ' and Book Name: ' . $bookname;
+              echo ' already exist! The quantity will automatically added';
+             */
             $pcs = $this->input->post('pcs');
 
-            $this->db->set('pcs', 'pcs + ' . (int) $pcs, FALSE);
+            $this->db->select('*');
+            $this->db->from('books');
             $this->db->where('book_id', $bookid);
-            $this->db->update('books');
-        } else if ($bookid != $query->result() && $bookname != $query->result()) {
-            echo 'Book ID and Book Name did not match';
-        } else {
+            $book = $this->db->get()->row();
+            if (isset($book->book_id) && $book->name == $bookname) {
+                //when book id and book name is exist
+                $view_data['msg'] = "Book $bookid and $bookname already exist already exist! The quantity will automatically added";
 
-            $data = array(
-                'book_id' => $this->input->post('bookid'),
-                'name' => $this->input->post('bookname'),
-                'type' => $this->input->post('type'),
-                'pcs' => $this->input->post('pcs'),
-            );
-            $this->db->insert('books', $data);
-            echo 'The books has been stored!';
+                $this->db->set('pcs', 'pcs + ' . (int) $pcs, FALSE);
+                $this->db->where('book_id', $bookid);
+                $this->db->update('books');
+            } else if (isset($book->book_id) && $book->name != $bookname) {
+                //when book id and book name is not match
+                $view_data['msg'] = "Book ID and Book Name did not match";
+            } else {
+                $data = array(
+                    'book_id' => $bookid,
+                    'name' => $bookname,
+                    'type' => $this->input->post('type'),
+                    'pcs' => $pcs,
+                );
+                $this->db->insert('books', $data);
+                $view_data['msg'] = "The books has been stored!";
+            }
         }
-    }
 
-    public function add() {
-        $bookid = $this->input->post('bookid');
-        $bookname = $this->input->post('bookname');
-        echo 'Book ' . $bookid;
-        echo ' and' . $bookname;
-        echo ' Successfully added';
-
-        $pcs = $this->input->post('pcs');
-
-        $this->db->set('pcs', 'pcs + ' . (int) $pcs, FALSE);
-        $this->db->where('book_id', $bookid);
-        $this->db->update('books');
+        $this->load->view('v_home', $view_data);
     }
 
 // else if (($bookid = $query->result()) &&($bookname != $query->result())) {
     //echo 'Book ID and Book Name did not match';
+
+    public function bookrule($str) {
+
+        $pattern = '/^([0-9])(-)([0-9][0-9])$/';
+        if (preg_match($pattern, $str)) {
+            return TRUE;
+        } else {
+            $this->set_message('valid_bookid', "%s is not a valid ID. It must be x-xx order");
+            return FALSE;
+        }
+    }
+
 }
 
 ?>
