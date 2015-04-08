@@ -4,11 +4,13 @@ session_start();
 
 class C_home extends CI_Controller {
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
 
-    function index() {
+    function index()
+    {
         //$this->load->view('v_home');
 
         if ($this->session->userdata('logged_in')) {
@@ -28,7 +30,8 @@ class C_home extends CI_Controller {
         //$this->load->view('v_home');
     }
 
-    function admin() {
+    function admin()
+    {
 
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
@@ -42,13 +45,15 @@ class C_home extends CI_Controller {
         }
     }
 
-    function logout() {
+    function logout()
+    {
         $this->session->unset_userdata('logged_in');
         session_destroy();
         redirect('c_login', 'refresh');
     }
 
-    public function store() {
+    public function store()
+    {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('bookid', 'Book ID', 'required');
         $this->form_validation->set_rules('bookname', 'Book Name', 'required');
@@ -99,7 +104,8 @@ class C_home extends CI_Controller {
         }
     }
 
-    public function add() {
+    public function add()
+    {
         $bookid = $this->input->post('bookid');
         $bookname = $this->input->post('bookname');
         echo 'Book ' . $bookid;
