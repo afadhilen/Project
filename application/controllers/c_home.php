@@ -57,7 +57,6 @@ class C_home extends CI_Controller {
         $view_data = array();
 
         $this->load->library('form_validation');
-        
         $this->form_validation->set_rules('bookid', 'Book ID', 'required');
         $this->form_validation->set_rules('bookname', 'Book Name', 'required');
         $this->form_validation->set_rules('type', 'Type', 'required');
