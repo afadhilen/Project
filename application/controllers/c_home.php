@@ -50,7 +50,7 @@ class C_home extends CI_Controller {
 
     public function store() {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('bookid', 'Book ID', 'required');
+        $this->form_validation->set_rules('bookid', 'Book ID', 'required|is_unique');
         $this->form_validation->set_rules('bookname', 'Book Name', 'required');
         $this->form_validation->set_rules('type', 'Type', 'required');
         $this->form_validation->set_rules('pcs', 'Quantity', 'required|integer');
@@ -68,10 +68,10 @@ class C_home extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('v_home');
-        } else if ($bookid = $query->result() && $bookname = $query->result()) {
+        } else if (($bookid = $query->result()) && ($bookname = $query->result())) {
             //$this->load->view('v_add', $bookid, $bookname, $pcs);
 
-            $bookid = $this->input->post('bookid1');
+            $bookid = $this->input->post('bookid');
 
 
             $bookname = $this->input->post('bookname');
@@ -82,14 +82,14 @@ class C_home extends CI_Controller {
             $pcs = $this->input->post('pcs');
 
             $this->db->set('pcs', 'pcs + ' . (int) $pcs, FALSE);
-            $this->db->where('book_id', $bookid1);
+            $this->db->where('book_id', $bookid);
             $this->db->update('books');
         } else if ($bookid != $query->result() && $bookname != $query->result()) {
             echo 'Book ID and Book Name did not match';
         } else {
 
             $data = array(
-                'book_id' => $bookid3,
+                'book_id' => $this->input->post('bookid'),
                 'name' => $this->input->post('bookname'),
                 'type' => $this->input->post('type'),
                 'pcs' => $this->input->post('pcs'),
