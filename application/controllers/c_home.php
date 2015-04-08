@@ -50,7 +50,7 @@ class C_home extends CI_Controller {
 
     public function store() {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('bookid', 'Book ID', 'required|is_unique');
+        $this->form_validation->set_rules('bookid', 'Book ID', 'required');
         $this->form_validation->set_rules('bookname', 'Book Name', 'required');
         $this->form_validation->set_rules('type', 'Type', 'required');
         $this->form_validation->set_rules('pcs', 'Quantity', 'required|integer');
@@ -75,8 +75,8 @@ class C_home extends CI_Controller {
 
 
             $bookname = $this->input->post('bookname');
-            echo 'Book ' . $bookid;
-            echo ' and ' . $bookname;
+            echo 'Book ID: ' . $bookid;
+            echo ' and Book Name: ' . $bookname;
             echo ' already exist! The quantity will automatically added';
 
             $pcs = $this->input->post('pcs');
