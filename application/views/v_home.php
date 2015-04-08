@@ -2,27 +2,30 @@
     <head>
     <h2> Welcome Home </h2>
     <title>Store Your Book</title>
-    
+
     <script>
-    
-    var id = document.store.bookid.value;
-    function id(){
-        
-        
-        
-        
-    }
-    
+
+        var id = document.store.bookid.value;
+        function id() {
+
+
+
+
+        }
+
     </script>
-        
-        
-    
-    
-    
+
+
+
+
+
 </head>
 <body>
+    <?php
+    echo isset($msg) ? $msg : '';
+    ?>
     <form action ='<?php echo base_url() . 'C_home/store'; ?>' method='post' name ='store'>
-         <?php echo validation_errors(); ?>
+        <?php echo validation_errors(); ?>
         Book ID:<br>
         <input type="text" name="bookid" size ='4'>
         <br>
@@ -38,8 +41,8 @@
         <br>
         Quantity:<br>
         <input type="text" name="pcs" size ='4'>
-    <input type ="submit" name = "submit" value="Store Book"/>
-   </form>
+        <input type ="submit" name = "submit" value="Store Book"/>
+    </form>
 </body>
 <a href ="c_home/logout"> Log Out </a>
 </html>
