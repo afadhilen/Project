@@ -27,5 +27,5 @@
         <input type ="submit" name = "submit" value="Store Book"/>
     </form>
 </body>
-<a href ="logout"> Log Out </a>
+<a href ="c_home/logout"> Log Out </a>
 </html>

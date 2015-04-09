@@ -59,12 +59,6 @@ class C_home extends CI_Controller {
             $bookid = $this->input->post('bookid');
             $bookname = $this->input->post('bookname');
 
-            /**
-             * echo 'Book ID: ' . $bookid;
-             *
-              echo ' and Book Name: ' . $bookname;
-              echo ' already exist! The quantity will automatically added';
-             */
             $pcs = $this->input->post('pcs');
 
             $this->db->select('*');
@@ -73,7 +67,7 @@ class C_home extends CI_Controller {
             $book = $this->db->get()->row();
             if (isset($book->book_id) && $book->name == $bookname) {
                 //when book id and book name is exist
-                $view_data['msg'] = "Book $bookid and $bookname already exist already exist! The quantity will automatically added";
+                $view_data['msg'] = "Book $bookid and $bookname already exist! The quantity will automatically added";
 
                 $this->db->set('pcs', 'pcs + ' . (int) $pcs, FALSE);
                 $this->db->where('book_id', $bookid);
@@ -101,11 +95,10 @@ class C_home extends CI_Controller {
 
     public function bookrule($str) {
 
-        $pattern = '/^([0-9])(-)([0-9][0-9])$/';
+        $pattern = '^\d{1}(\-\d{2})$^';
         if (preg_match($pattern, $str)) {
             return TRUE;
         } else {
-            $this->set_message('valid_bookid', "%s is not a valid ID. It must be x-xx order");
             return FALSE;
         }
     }

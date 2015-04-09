@@ -71,6 +71,23 @@ class M_users extends CI_Model {
             return FALSE;
         }
     }
+    
+    public function store($bookid){
+        
+            $this->db->select('*');
+            $this->db->from('books');
+            $this->db->where('book_id', $bookid);
+            
+            $query = $this->db->get()->row();
+
+        if ($query) {
+            return $query->result();
+        } else {
+            return FALSE;
+        }
+            
+    }
+    
 
     /* public function insert($data){
 

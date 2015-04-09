@@ -1,5 +1,6 @@
 <?php
 
+$lang['bookrule']			= "%s is not a valid ID. It must be integer and in X-XX order";
 $lang['valid_id']			= "The %s already exist! Try another";
 $lang['alpha_rules']			= "The %s must contain only alpha numeric";
 $lang['required']			= "The %s field is required.";
