@@ -38,6 +38,8 @@ class C_verifiedLogin extends CI_Controller {
         //query the database
         $result = $this->m_users->login($username, $password);
 
+        $view_data = array();
+        
         if ($result) {
             $sess_array = array();
             foreach ($result as $row) {
@@ -51,7 +53,7 @@ class C_verifiedLogin extends CI_Controller {
             return TRUE;
         } else {
             $this->form_validation->set_message('check_database', 'Invalid username or password');
-            echo'"Dont have account?" <a href ="' . site_url('C_signup/index') . '"> Sign Up </a>';
+            $view_data['msg'] = '"Dont have account?" <a href ="' . site_url('C_signup/index') . '"> Sign Up </a>';
             return FALSE;
         }
     }

@@ -18,10 +18,9 @@
             <div class='jumbotron col-lg-8 col-lg-offset-2'>
                 <div class ='row top-buffer'>
                     <div class ="col-lg-6 col-lg-offset-3">
-
                         <?php echo validation_errors(); ?>
                         <?php echo form_open('c_verifiedlogin'); ?>
-
+                        <?php echo isset($msg) ? $msg : ''; ?>
                         <div class='form-group'>
                             <label for="username">Username:</label>
                             <input type = "text" name = "username" placeholder = "Enter Username" class ='form-control' />
@@ -31,15 +30,20 @@
                             <input type = "password" name = "password" placeholder = "Enter Password" class ='form-control' />  
                         </div><br>
                         <div class='form-group'>
-                            <input type ="submit" name = "Login" value="Login" class ='btn btn-default btn-lg'/>
+                            <input type ="submit" name = "Login" value="Login" class ='btn btn-primary btn-lg'/>
                         </div>
                         <div class='form-group'>
-                            <a href ="C_signup/index" class="btn btn-primary btn-lg"> Signup </a>
+                        <a href ='<?php echo base_url() . 'c_signup/' ?>' class="btn btn-default btn-lg"> Signup </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <footer>
+        <div class='col-lg-offset-10'>
+            <small>&copy; Powered by ASUS</small>
+        </div>
+    </footer>
 </html>
 

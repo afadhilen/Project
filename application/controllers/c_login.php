@@ -13,51 +13,56 @@ class C_login extends CI_Controller {
     Public function index() {
         //$this->load->helper('form');
         $this->load->view('v_login');
-}}
+    }
 
+    Public function signup() {
 
-       /* Public function login() {
-      //$this->load->model('m_users');
+        $this->load->view('v_signup');
+    }
 
-      $this->form_validation->set_rules('username', 'username', 'required');
-      $this->form_validation->set_rules('password', 'password', 'required|callback_verifiedlogin');
+}
 
-      if ($this->form_validation->run() == FALSE) {
-      $this->load->view('v_login');
-      } else {
-      redirect('c_home');
-      }
-      }
+/* Public function login() {
+  //$this->load->model('m_users');
 
-      public function verifiedlogin() {
+  $this->form_validation->set_rules('username', 'username', 'required');
+  $this->form_validation->set_rules('password', 'password', 'required|callback_verifiedlogin');
 
-      $username = $this->input->post('username');
-      $password = $this->input->post('password');
+  if ($this->form_validation->run() == FALSE) {
+  $this->load->view('v_login');
+  } else {
+  redirect('c_home');
+  }
+  }
 
-      $this->load->model('m_users');
-      $result = $this->m_users->login($username, $password);
-      if ($result) {
+  public function verifiedlogin() {
 
-      /*$sess_array = array(
-      'username' => $this->input->post('username')
-      );
-      $sess_array = array();
-      foreach ($result as $row){
-      $sess_array = array(
+  $username = $this->input->post('username');
+  $password = $this->input->post('password');
 
-      'username'  => $row -> username
-      );
-      $this->session->set_userdata('logged_in', $sess_array);
-      } */
+  $this->load->model('m_users');
+  $result = $this->m_users->login($username, $password);
+  if ($result) {
 
-    //      return true;
+  /*$sess_array = array(
+  'username' => $this->input->post('username')
+  );
+  $sess_array = array();
+  foreach ($result as $row){
+  $sess_array = array(
 
-    /* } else {
-      $this->form_validation->set_message('verifiedlogin', 'You are not Exist!');
-      echo '<br>';
-      echo'"Dont have account?" <a href ="' . site_url('C_signup/index') . '"> Sign Up </a>';
-      return false;
-      }
-      } */
+  'username'  => $row -> username
+  );
+  $this->session->set_userdata('logged_in', $sess_array);
+  } */
 
+//      return true;
+
+/* } else {
+  $this->form_validation->set_message('verifiedlogin', 'You are not Exist!');
+  echo '<br>';
+  echo'"Dont have account?" <a href ="' . site_url('C_signup/index') . '"> Sign Up </a>';
+  return false;
+  }
+  } */
 ?>

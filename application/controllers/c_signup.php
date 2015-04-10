@@ -3,8 +3,11 @@
 class C_signup extends CI_Controller {
 
     Public function index() {
-
         $this->load->view('v_signup');
+    }
+
+    Public function detail() {
+        
     }
 
     Public function alpha_rules($str) {
@@ -47,7 +50,7 @@ class C_signup extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('v_signup');
         } //else if ($query->num_rows() > 0) {
-            //echo 'Username and Password already exist! Try another';
+        //echo 'Username and Password already exist! Try another';
         //}else if ($password2 != $password) {
         //echo 'Your Password and Retype password did not match!'; }
         else {
@@ -59,12 +62,9 @@ class C_signup extends CI_Controller {
                 'email' => $this->input->post('email'),
             );
             $this->db->insert('users', $data);
-            echo 'Account created';
-            echo '</br>';
-            echo 'Please ';
-            echo '<a href = "' . site_url('C_login') . '"> Login </a>';
+            $this->load->view('v_signup_conf');
             //header('Refresh: 2.5; URL= c_login/v_login');
-           // redirect('c_login');
+            // redirect('c_login');
         }
     }
 
@@ -98,4 +98,5 @@ class C_signup extends CI_Controller {
       }
      */
 }
+
 ?>

@@ -14,8 +14,9 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
 
     </head>
-    <body><center>
-        <div class ='container'>
+    <body>
+    <center>
+            <div class ='container'>
             <div class ='jumbotron'>
                 <h1> Book Store and Record Data </h1>
             </div>

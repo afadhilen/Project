@@ -1,34 +1,58 @@
 <html>
 
     <head>
-    <h2> Welcome Admin </h2>
-    <title>User Data</title>
-</head>
-<table>
-    <thead>
-    <th>ID</th>
-    <th>Username</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Email</th>
-    <th>Option</th>
-</thead>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>User Data</title>
 
-<?php foreach ($users as $_key => $_value): ?> 
-    <tr>
-        <td> <?= $_value->id ?></td>
-        <td><?= $_value->username ?></td>
-        <td><?= $_value->password ?></td>
-        <td><?= $_value->firstname ?></td>
-        <td><?= $_value->lastname ?></td>
-        <td><?= $_value->email ?></td>
+        <link rel="stylesheet" type="text/css" href="style.css">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-        <td><a href="<?= site_url("c_admin/delete/{$_value->id}") ?>">Delete</a> | <a href="<?= site_url("c_admin/updateform/{$_value->id}") ?>">Edit</a></td>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.min.css'); ?>">
+        <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
+        <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
+        <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
 
-    </tr>
-<?php endforeach; ?>
-</table> 
+    </head>
+    <center><div class ='container'>
+            <div class ='jumbotron'>
+                <h1> User Record Data </h1>
+            </div>
+            <div class ='row top-buffer'>
+                <div class='col-lg-8 col-lg-offset-2'>
+                    <table class ="table">
+                        <thead>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Option</th>
+                        </thead>
 
-<a href ="c_admin/logout"> Log Out </a>
+                        <?php foreach ($users as $_key => $_value): ?> 
+                            <tr>
+                                <td> <?= $_value->id ?></td>
+                                <td><?= $_value->username ?></td>
+                                <td><?= $_value->password ?></td>
+                                <td><?= $_value->firstname ?></td>
+                                <td><?= $_value->lastname ?></td>
+                                <td><?= $_value->email ?></td>
+
+                                <td><a href="<?= site_url("c_admin/delete/{$_value->id}") ?>">Delete</a> | <a href="<?= site_url("c_admin/updateform/{$_value->id}") ?>">Edit</a></td>
+
+                            </tr>
+                        <?php endforeach; ?>
+                    </table> 
+                    <a class="btn btn-default btn-primary btn-lg" href ="c_admin/logout"> Log Out </a>
+                </div>
+            </div>
+        </div>
+    </center>
 </body>
+<footer>
+    <div class='col-lg-offset-10'>
+        <small>&copy; Powered by ASUS</small>
+    </div>
+</footer>
 </html>
