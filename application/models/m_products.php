@@ -13,13 +13,7 @@ class M_products extends CI_Model {
             $this->db->from('books');
             $this->db->where('book_id', $bookid);
             
-            $query = $this->db->get();
-
-        if ($query) {
-            return $query->result();
-        } else {
-            return FALSE;
-        }
+            return $this->db->get();
             
     }
 }
