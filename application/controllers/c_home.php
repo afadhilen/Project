@@ -26,15 +26,26 @@ class C_home extends CI_Controller {
 
             if ($this->form_validation->run() == TRUE) {
 
+
+
                 $bookid = $this->input->post('bookid');
                 $bookname = $this->input->post('bookname');
 
                 $pcs = $this->input->post('pcs');
-
-                $this->db->select('*');
-                $this->db->from('books');
-                $this->db->where('book_id', $bookid);
-                $book = $this->db->get()->row();
+                
+                $this->load->model('m_products');
+               $book = $this->m_products->store($bookid);
+               
+                
+                
+                /**
+                 * 
+                 * $this->db->select('*');
+                  $this->db->from('books');
+                  $this->db->where('book_id', $bookid);
+                  $book = $this->db->get()->row();
+                 * 
+                 */
                 if (isset($book->book_id) && $book->name == $bookname) {
                     //when book id and book name is exist
                     $view_data['msg'] = "Book $bookid and $bookname already exist! The quantity will automatically added";
@@ -99,22 +110,23 @@ class C_home extends CI_Controller {
 
             echo "You don't have right to access this page! ";
             //redirect('c_login', 'refresh');
-    }}
+        }
+    }
 
 // else if (($bookid = $query->result()) &&($bookname != $query->result())) {
-        //echo 'Book ID and Book Name did not match';
+    //echo 'Book ID and Book Name did not match';
 
-        public function bookrule($str) {
+    public function bookrule($str) {
 
-            //$pattern = '^(\d{1})(\-\d{2})$^';
-            $pattern2 = '^(\d{1}+)-\d{2}$^';
-            if (preg_match($pattern2, $str)) {
-                return TRUE;
-            } else {
-                return FALSE;
-            }
+        //$pattern = '^(\d{1})(\-\d{2})$^';
+        $pattern2 = '^(\d{1}+)-\d{2}$^';
+        if (preg_match($pattern2, $str)) {
+            return TRUE;
+        } else {
+            return FALSE;
         }
-
     }
+
+}
 
 ?>
