@@ -39,11 +39,11 @@
                                         </div></br>
                                         <div class='form-group'>
                                             <label for='password'>Password:</label>
-                                            <input type = "text" name = "password" placeholder = "Password" class ="form-control"/>
+                                            <input type = "password" name = "password" placeholder = "Password" class ="form-control"/>
                                         </div></br>
                                         <div class='form-group'>
                                             <label for='password2'>Re-Type Password:</label>
-                                            <input type = "text" name = "password2" placeholder = "Re-Type Password" class ="form-control" />
+                                            <input type = "password" name = "password2" placeholder = "Re-Type Password" class ="form-control" />
                                         </div></br>
                                         <div class='form-group'>
                                             <label for='email'>Email:</label>

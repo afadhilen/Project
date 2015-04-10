@@ -71,10 +71,16 @@ class C_home extends CI_Controller {
             $this->load->view('v_home', $view_data);
         } else {
             //If no session, redirect to login page
+            $this->load->view('404_page');
+            /**
+             * 
+             *
             echo "You don't have right to access this page! ";
             echo '<a href = "' . site_url('C_login') . '"> Sign In </a>';
             echo ' first';
-            //redirect('c_login', 'refresh');
+            
+             * //redirect('c_login', 'refresh');
+             */
         }
         //$this->load->view('v_home');
     }
@@ -88,7 +94,7 @@ class C_home extends CI_Controller {
         } else {
             //If no session, redirect to login page
 
-            echo "You don't have right to access this page! ";
+           $this->load->view('404_page');
             //redirect('c_login', 'refresh');
         }
     }
