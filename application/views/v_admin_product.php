@@ -43,7 +43,7 @@
                             </tr>
                         <?php endforeach; ?>
                     </table> 
-                    <a class="btn btn-default btn-primary btn-lg" href ="c_admin/logout"> Log Out </a>
+                    <center><a href ="<?php echo base_url() . 'c_home/logout' ?>"  class ='btn btn-primary btn-sm'> Log Out </a></center>
                 </div>
             </div>
         </div>

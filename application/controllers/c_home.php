@@ -48,14 +48,14 @@ class C_home extends CI_Controller {
                  */
                 if (isset($book->book_id) && $book->name == $bookname) {
                     //when book id and book name is exist
-                    $view_data['msg'] = "Book $bookid and $bookname already exist! The quantity will automatically added";
-
+                    $view_data['msg1'] = "Book $bookid and $bookname already exist!";
+                    $view_data['msg2'] = "The quantity will automatically added";
                     $this->db->set('pcs', 'pcs + ' . (int) $pcs, FALSE);
                     $this->db->where('book_id', $bookid);
                     $this->db->update('books');
                 } else if (isset($book->book_id) && $book->name != $bookname) {
                     //when book id and book name is not match
-                    $view_data['msg'] = "Book ID and Book Name did not match";
+                    $view_data['msg3'] = "Book ID and Book Name did not match";
                 } else {
                     $data = array(
                         'book_id' => $bookid,
@@ -64,7 +64,7 @@ class C_home extends CI_Controller {
                         'pcs' => $pcs,
                     );
                     $this->db->insert('books', $data);
-                    $view_data['msg'] = "The books has been stored!";
+                    $view_data['msg4'] = "The books has been stored!";
                 }
             }
 
@@ -96,7 +96,7 @@ class C_home extends CI_Controller {
     function logout() {
         $this->session->unset_userdata('logged_in');
         session_destroy();
-        redirect('c_login', 'refresh');
+        redirect('c_index', 'refresh');
     }
 
     public function store() {

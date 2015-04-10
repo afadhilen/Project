@@ -73,7 +73,7 @@ class C_admin extends CI_Controller {
         function logout() {
             $this->session->unset_userdata('logged_in');
             session_destroy();
-            redirect('c_login', 'refresh');
+            redirect('c_index', 'refresh');
         }
 
     }

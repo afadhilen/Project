@@ -23,7 +23,7 @@
                             <div class ='row top-buffer'>
                                 <div class ="col-lg-6 col-lg-offset-3">
                                     <form action ='<?php echo base_url() . 'C_signup/signup'; ?>' method='post'>
-                                        <?php echo validation_errors(); ?>
+                                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
                                         <div class='form-group'>
                                             <label for='firstname'>First Name:</label>

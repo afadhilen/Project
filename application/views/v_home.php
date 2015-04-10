@@ -22,10 +22,35 @@
                             <div class ='row top-buffer'>
                                 <div class ="col-lg-6 col-lg-offset-3">
                                     <?php
-                                    echo isset($msg) ? $msg : '';
+                                    if (isset($msg1) && ($msg2)) {
+                                        echo '<div class="alert alert-info" role="alert">';
+                                        echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
+                                        echo '<span class="sr-only">Error: </span>';
+                                        echo '  ';
+                                        echo $msg1;
+                                        echo '</br>';
+                                        echo $msg2;
+                                        echo '</div>';
+                                    } elseif (isset($msg3)) {
+                                        echo '<div class="alert alert-danger" role="alert">';
+                                         echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">  </span>';
+                                        echo '<span class="sr-only">Ok: </span>';
+                                        echo '  ';
+                                        echo $msg3;
+                                        echo '</div>';
+                                    } elseif (isset($msg4)) {
+                                        echo '<div class="alert alert-success" role="alert">';
+                                        echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
+                                        echo '<span class="sr-only">Ok: </span>';
+                                        echo '  ';
+                                        echo $msg4;
+                                        echo '</div>';
+                                    } else {
+                                        
+                                    }
                                     ?>
                                     <form action ='<?php echo base_url() . 'C_home/index'; ?>' method='post' name ='store'>
-                                        <?php echo validation_errors(); ?>
+                                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
                                         <div class='form-group'>
                                             <label for="bookid">Book ID:</label>
@@ -54,7 +79,7 @@
                         </div>
                         </div>
                         </body>
-                        <center><a href ="C_home/logout"  class ='btn btn-primary btn-sm'> Log Out </a></center>
+                        <center><a href ="<?php echo base_url() . 'c_home/logout' ?>"  class ='btn btn-primary btn-sm'> Log Out </a></center>
                         <footer>
                             <div class='col-lg-offset-10'>
                                 <small>&copy; Powered by ASUS</small>

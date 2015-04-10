@@ -24,7 +24,7 @@
                                 <div class ="col-lg-6 col-lg-offset-3">
                                     <form action ='<?php echo base_url() . 'c_admin/update/' . $this->uri->segment(3); ?>' method='post'>
                                         <?php
-                                        echo validation_errors();
+                                        echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
 
                                         $id = $this->uri->segment(3);
                                         $this->db->where('id', $id);

@@ -18,7 +18,7 @@
             <div class='jumbotron col-lg-8 col-lg-offset-2'>
                 <div class ='row top-buffer'>
                     <div class ="col-lg-6 col-lg-offset-3">
-                        <?php echo validation_errors(); ?>
+                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
                         <?php echo form_open('c_verifiedlogin'); ?>
                         <?php echo isset($msg) ? $msg : ''; ?>
                         <div class='form-group'>
@@ -35,6 +35,7 @@
                         <div class='form-group'>
                         <a href ='<?php echo base_url() . 'c_signup/' ?>' class="btn btn-default btn-lg"> Signup </a>
                         </div>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
