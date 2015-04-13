@@ -49,7 +49,7 @@ class C_home extends CI_Controller {
                 if (isset($book->book_id) && $book->name == $bookname) {
                     //when book id and book name is exist
                     $view_data['msg1'] = "Book $bookid and $bookname already exist!";
-                    $view_data['msg2'] = "The quantity will automatically added";
+                    $view_data['msg2'] = "  The quantity will automatically added";
                     $this->db->set('pcs', 'pcs + ' . (int) $pcs, FALSE);
                     $this->db->where('book_id', $bookid);
                     $this->db->update('books');
