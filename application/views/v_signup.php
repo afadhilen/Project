@@ -19,7 +19,7 @@
     <body>
         <div class ='container'>
             <div class='jumbotron'>
-                <center><h1>  <h1>Form Update</h1>
+                <center><h1>  <h1>Sign Up Form</h1>
                         </div>
                         <div class='col-lg-8 col-lg-offset-2'>
                             <div class ='row top-buffer'>
