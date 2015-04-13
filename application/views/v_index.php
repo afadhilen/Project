@@ -12,6 +12,10 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
+        
+        <!--<link rel="icon" href="<?php echo base_url('img/favicon.png'); ?>" type="image/gif">-->
+        <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
+
 
     </head>
     <body>
@@ -24,7 +28,7 @@
                 <div class ="col-lg-8 col-lg-offset-2">
                     <div class ='jumbotron'>
                         <h4> Login as: </h4>
-                        <a href ="C_admin/index" class="btn btn-default btn-block btn-lg" size="15"> Admin </a>
+                        <a href ="C_admin/index" class="btn btn-primary btn-block btn-lg" size="15"> Admin </a>
                         <h4>or</h4>
                         <a href ="C_login/index" class="btn btn-default btn-block btn-lg" size="15"> User </a>
                     </div>

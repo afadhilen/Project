@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
+        
+        <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
     </head>
     <body>
@@ -15,7 +17,7 @@
             <div class='jumbotron'>
                 <center><h1> Admin Login Page </h1>
             </div>
-            <div class='jumbotron col-lg-8 col-lg-offset-2'>
+            <div class='col-lg-8 col-lg-offset-2'>
                 <div class ='row top-buffer'>
                     <div class ="col-lg-6 col-lg-offset-3">
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>

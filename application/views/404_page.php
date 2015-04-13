@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
+        
+        <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
     <body>
         <div class ='container'>
             <div class='jumbotron'>

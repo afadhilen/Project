@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
+        
+        <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
     </head>
     <body>
@@ -19,7 +21,7 @@
             <div class='jumbotron'>
                 <center><h1>  <h1>Form Update</h1>
                         </div>
-                        <div class='jumbotron col-lg-8 col-lg-offset-2'>
+                        <div class='col-lg-8 col-lg-offset-2'>
                             <div class ='row top-buffer'>
                                 <div class ="col-lg-6 col-lg-offset-3">
                                     <form action ='<?php echo base_url() . 'c_admin/update/' . $this->uri->segment(3); ?>' method='post'>
