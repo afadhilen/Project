@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
-        
+
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
     </head>
@@ -35,7 +35,7 @@
                                         echo '</div>';
                                     } elseif (isset($msg3)) {
                                         echo '<div class="alert alert-danger" role="alert">';
-                                         echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">  </span>';
+                                        echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">  </span>';
                                         echo '<span class="sr-only">Ok: </span>';
                                         echo '  ';
                                         echo $msg3;
@@ -54,28 +54,29 @@
                                     <form action ='<?php echo base_url() . 'C_home/index'; ?>' method='post' name ='store'>
                                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
-                                        <div class='form-group'>
-                                            <label for="bookid">Book ID:</label>
-                                            <input type="text" name="bookid" size ='4' class='form-control'>
-                                        </div><br>
-                                        <div class='form-group'>
-                                            <label for="bookname">Book Name:</label>
-                                            <input type="text" name="bookname" class='form-control'>
-                                        </div><br>
-                                        <div class='form-group'>
-                                            <label for="type">Book Type:</label>
-                                            <select name="type" class='form-control'>
-                                                <option name ="comic" value="comic">Comic</option>
-                                                <option name ="novel" value="novel">Novel</option>
-                                                <option name ="other" value="other">Other</option>
-                                            </select>
-                                        </div><br>
-                                        <div class='form-group'>
-                                            <label for="pcs">Quantity:</label>
-                                            <input type="text" name="pcs" size ='4' class='form-control'>
-                                        </div>
-                                        <input type ="submit" name = "submit" value="Store Book"  class ='btn btn-default btn-lg'/>
-                                    </form>
+                                        <table class ='table table-bordered'>
+                                            <td><div class='form-group'>
+                                                    <label for="bookid">Book ID:</label>
+                                                    <input type="text" name="bookid" size ='4' class='form-control'>
+                                                </div><br>
+                                                <div class='form-group'>
+                                                    <label for="bookname">Book Name:</label>
+                                                    <input type="text" name="bookname" class='form-control'>
+                                                </div><br>
+                                                <div class='form-group'>
+                                                    <label for="type">Book Type:</label>
+                                                    <select name="type" class='form-control'>
+                                                        <option name ="comic" value="comic">Comic</option>
+                                                        <option name ="novel" value="novel">Novel</option>
+                                                        <option name ="other" value="other">Other</option>
+                                                    </select>
+                                                </div><br>
+                                                <div class='form-group'>
+                                                    <label for="pcs">Quantity:</label>
+                                                    <input type="text" name="pcs" size ='4' class='form-control'>
+                                                </div>
+                                                <input type ="submit" name = "submit" value="Store Book"  class ='btn btn-default btn-lg'/>
+                                        </table></form>
                                 </div>
                             </div>
                         </div>

@@ -36,7 +36,8 @@
 
                                         foreach ($query->result() as $rows) {
                                             ?>
-                                            <div class='form-group'>
+                                        <table class ='table table-bordered'>
+                                            <td><div class='form-group'>
                                                 <label for="username">First Name:</label>
                                                 <input type = "text" name = "firstname" class ='form-control' value ='<?php echo $rows->firstname; ?>'/>		
                                             </div></br>
@@ -59,9 +60,9 @@
                                             <?php
                                         }
                                         ?>  
-                                        </table>
+                                      
                                         <input type ="submit" class ='btn btn-default btn-lg' name = "submit" value="Update"/>
-                                    </form>
+                                      </table></form>
                                 </div>
                             </div>
                         </div>

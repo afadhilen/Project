@@ -31,6 +31,21 @@ class C_admin extends CI_Controller {
         }
     }
 
+    public function booksdetail() {
+
+        if ($this->session->userdata('logged_in')) {
+            $session_data = $this->session->userdata('logged_in');
+            $data['username'] = $session_data['username'];
+
+            $this->load->model('m_products');
+            $bookid = $this->m_products->get();
+
+            $this->load->view('v_admin_product', ['book_id' => $bookid]);
+        } else {
+            $this->load->view('404_page');
+        }
+    }
+
     Public function product() {
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
@@ -52,6 +67,21 @@ class C_admin extends CI_Controller {
         redirect('c_admin/detail');
     }
 
+    public function deletebook($bookid) {
+
+        $this->load->model('m_products');
+        $this->m_products->delete($bookid);
+
+        redirect('c_admin/booksdetail');
+    }
+
+    public function booksdelete($bookid) {
+
+        $this->load->model('m_products');
+        $this->m_product->delete($bookid);
+        redirect('c_admin/detail');
+    }
+
     public function updateform() {
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
@@ -61,6 +91,21 @@ class C_admin extends CI_Controller {
             $users = $this->m_users->get();
 
             $this->load->view('v_admin_edit');
+        } else {
+            $this->load->view('404_page');
+        }
+    }
+
+    public function updatebookform() {
+
+        if ($this->session->userdata('logged_in')) {
+            $session_data = $this->session->userdata('logged_in');
+            $data['username'] = $session_data['username'];
+
+            $this->load->model('m_products');
+            $bookid = $this->m_products->get();
+
+            $this->load->view('v_admin_edit_books');
         } else {
             $this->load->view('404_page');
         }
@@ -92,6 +137,41 @@ class C_admin extends CI_Controller {
             $this->db->update('users', $data);
             redirect('c_admin/detail');
         }
+    }
+
+    public function booksupdate() {
+        $bookid = $this->uri->segment(3);
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('bookid', 'Book ID', 'required|max_length[4]|callback_bookrule');
+        $this->form_validation->set_rules('bookname', 'Book Name', 'required');
+        $this->form_validation->set_rules('type', 'Type', 'required');
+        $this->form_validation->set_rules('pcs', 'Quantity', 'required|integer');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->updatebookform();
+        } else {
+
+            $data = array(
+                'book_id' => $this->input->post('bookid'),
+                'name' => $this->input->post('bookname'),
+                'type' => $this->input->post('type'),
+                'pcs' => $this->input->post('pcs'),
+            );
+            $this->db->where('book_id', $bookid);
+            $this->db->update('books', $data);
+            redirect('c_admin/booksdetail');
+    }}
+        public function bookrule($str) {
+
+            //$pattern = '^(\d{1})(\-\d{2})$^';
+            $pattern2 = '^(\d{1}+)-\d{2}$^';
+            if (preg_match($pattern2, $str)) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
 
         function logout() {
             $this->session->unset_userdata('logged_in');
@@ -101,6 +181,5 @@ class C_admin extends CI_Controller {
 
     }
 
-}
 
 ?>

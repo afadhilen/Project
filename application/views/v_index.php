@@ -25,12 +25,13 @@
                 <h1> Book Store and Record Data </h1>
             </div>
             <div class ='row top-buffer'>
-                <div class ="col-lg-8 col-lg-offset-2">
+                <div class ="col-lg-6 col-lg-offset-3">
+                    <!--<h4> Login as: </h4>-->
                     <div class ='jumbotron'>
-                        <h4> Login as: </h4>
-                        <a href ="C_admin/index" class="btn btn-primary btn-block btn-lg" size="15"> Admin </a>
-                        <h4>or</h4>
-                        <a href ="C_login/index" class="btn btn-default btn-block btn-lg" size="15"> User </a>
+                        <table class ='table-responsive'>
+                            <a href ="C_admin/index" class="btn btn-primary btn-block btn-lg" size="15"> Login as Admin </a>
+                            <a href ="C_login/index" class="btn btn-default btn-block btn-lg" size="15"> Login as User </a>
+                        </table>
                     </div>
                 </div>
             </div>

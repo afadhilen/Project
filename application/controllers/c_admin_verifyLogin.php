@@ -3,6 +3,8 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+session_start();
+
 class C_admin_verifyLogin extends CI_Controller {
 
     function __construct() {

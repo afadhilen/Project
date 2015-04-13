@@ -10,8 +10,7 @@ class C_home extends CI_Controller {
 
     function index() {
         //$this->load->view('v_home');
-
-        if ($this->session->userdata('logged_in')) {
+            if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
             //$this->load->view('v_home', $data);
@@ -32,12 +31,12 @@ class C_home extends CI_Controller {
                 $bookname = $this->input->post('bookname');
 
                 $pcs = $this->input->post('pcs');
-                
+
                 $this->load->model('m_products');
-               $book = $this->m_products->store($bookid);
-               
-                
-                
+                $book = $this->m_products->store($bookid);
+
+
+
                 /**
                  * 
                  * $this->db->select('*');
@@ -75,10 +74,10 @@ class C_home extends CI_Controller {
             /**
              * 
              *
-            echo "You don't have right to access this page! ";
-            echo '<a href = "' . site_url('C_login') . '"> Sign In </a>';
-            echo ' first';
-            
+              echo "You don't have right to access this page! ";
+              echo '<a href = "' . site_url('C_login') . '"> Sign In </a>';
+              echo ' first';
+
              * //redirect('c_login', 'refresh');
              */
         }
@@ -94,7 +93,7 @@ class C_home extends CI_Controller {
         } else {
             //If no session, redirect to login page
 
-           $this->load->view('404_page');
+            $this->load->view('404_page');
             //redirect('c_login', 'refresh');
         }
     }

@@ -22,6 +22,7 @@
             </div>
             <div class ='row top-buffer'>
                 <div class='col-lg-8 col-lg-offset-2'>
+                     <table class ="table-responsive">
                     <table class ="table">
                         <thead>
                         <th>ID</th>
@@ -46,7 +47,7 @@
 
                             </tr>
                         <?php endforeach; ?>
-                    </table> 
+                    </table></table>
                     <center><a href ="<?php echo base_url() . 'c_home/logout' ?>"  class ='btn btn-primary btn-sm'> Log Out </a></center>
                 </div>
             </div>

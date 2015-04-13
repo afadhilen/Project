@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
-        
+
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
     </head>
     <body>
@@ -23,21 +23,22 @@
                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
                         <?php echo form_open('c_verifiedlogin'); ?>
                         <?php echo isset($msg) ? $msg : ''; ?>
-                        <div class='form-group'>
-                            <label for="username">Username:</label>
-                            <input type = "text" name = "username" placeholder = "Enter Username" class ='form-control' />
-                        </div><br>
-                        <label for="password">Password:</label>
-                        <div class='form-group'>
-                            <input type = "password" name = "password" placeholder = "Enter Password" class ='form-control' />  
-                        </div><br>
-                        <div class='form-group'>
-                            <input type ="submit" name = "Login" value="Login" class ='btn btn-primary btn-lg'/>
-                        </div>
-                        <div class='form-group'>
-                        <a href ='<?php echo base_url() . 'c_signup/' ?>' class="btn btn-default btn-lg"> Signup </a>
-                        </div>
+                        <table class ='table table-bordered'>
+                            <td><div class='form-group'>
+                                    <label for="username">Username:</label>
+                                    <input type = "text" name = "username" placeholder = "Enter Username" class ='form-control' />
+                                </div><br>
+                                <div class='form-group'>
+                                    <label for="password">Password:</label>
+                                    <input type = "password" name = "password" placeholder = "Enter Password" class ='form-control' />  
+                                </div><br>
+                                <div class='form-group'>
+                                    <input type ="submit" name = "Login" value="Login" class ='btn btn-primary btn-lg'/>
+                               
+                                    <a href ='<?php echo base_url() . 'c_signup/' ?>' class="btn btn-default btn-lg"> Signup </a>
+                                </div></table>
                         <?php echo form_close(); ?>
+
                     </div>
                 </div>
             </div>
