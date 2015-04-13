@@ -12,15 +12,21 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
         
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
-    <body>
-        <div class ='container'>
-            <div class='jumbotron'>
-                <center><h1>  <h1>404 NOT FOUND!</h1>
+     
+   <!-- <center> <body background ="http://joomlart.s3.amazonaws.com/images/templates/j25/ja-lens/large/404.jpg" style='width:1440px;height:1000px'> </center> -->
+        <body>
+        <div style="background:url(http://techfar.com/wp-content/uploads/2013/03/404-page2.png) gray center no-repeat scroll;border:1px solid black;width:1360px;height:700px;font-size:18px;"></div>
+
+            <!-- <div class='jumbotron'>
+               <center><h1>  <h1>404 NOT FOUND!</h1>
                         <br>
                         <h1> NICE TRY </h1>
 
                         </div>
                         </div>
-
+-->
+     
                         </body>
                         </html>
+               
+              

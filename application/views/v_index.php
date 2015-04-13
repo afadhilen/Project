@@ -12,15 +12,15 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
-        
-        <!--<link rel="icon" href="<?php echo base_url('img/favicon.png'); ?>" type="image/gif">-->
+
+<!--<link rel="icon" href="<?php echo base_url('img/favicon.png'); ?>" type="image/gif">-->
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
 
     </head>
     <body>
     <center>
-            <div class ='container'>
+        <div class ='container'>
             <div class ='jumbotron'>
                 <h1> Book Store and Record Data </h1>
             </div>
