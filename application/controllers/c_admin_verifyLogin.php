@@ -12,7 +12,8 @@ class C_admin_verifyLogin extends CI_Controller {
 
     function index() {
         //This method will have the credentials validation
-        
+        $this->session->unset_userdata('logged_in');
+        session_destroy();
         $this->load->library('form_validation');
         $this->load->model('m_users');
 

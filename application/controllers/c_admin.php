@@ -11,7 +11,8 @@ class C_admin extends CI_Controller {
     }
 
     Public function index() {
-
+        $this->session->unset_userdata('logged_in');
+        session_destroy();
         $this->load->view('v_admin');
     }
 
@@ -60,46 +61,46 @@ class C_admin extends CI_Controller {
             $users = $this->m_users->get();
 
             $this->load->view('v_admin_edit');
-        }else
-        {
-             $this->load->view('404_page');
-    }}
+        } else {
+            $this->load->view('404_page');
+        }
+    }
 
-        public function update() {
+    public function update() {
 
-            $id = $this->uri->segment(3);
+        $id = $this->uri->segment(3);
 
-            $this->load->library('form_validation');
-            $this->form_validation->set_rules('firstname', 'Firstname', 'required|callback_alpha_rules');
-            $this->form_validation->set_rules('lastname', 'Lastname', 'required|callback_alpha_rules');
-            $this->form_validation->set_rules('username', 'Username', 'required|max_length[10]|callback_valid_id');
-            $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[20]|callback_verifiedlogin');
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('firstname', 'Firstname', 'required|callback_alpha_rules');
+        $this->form_validation->set_rules('lastname', 'Lastname', 'required|callback_alpha_rules');
+        $this->form_validation->set_rules('username', 'Username', 'required|max_length[10]|callback_valid_id');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[20]|callback_verifiedlogin');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 
-            if ($this->form_validation->run() == FALSE) {
-                $this->updateform();
-            } else {
+        if ($this->form_validation->run() == FALSE) {
+            $this->updateform();
+        } else {
 
-                $data = array(
-                    'firstname' => $this->input->post('firstname'),
-                    'lastname' => $this->input->post('lastname'),
-                    'username' => $this->input->post('username'),
-                    'password' => $this->input->post('password'),
-                    'email' => $this->input->post('email'),
-                );
-                $this->db->where('id', $id);
-                $this->db->update('users', $data);
-                redirect('c_admin/detail');
-            }
+            $data = array(
+                'firstname' => $this->input->post('firstname'),
+                'lastname' => $this->input->post('lastname'),
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('password'),
+                'email' => $this->input->post('email'),
+            );
+            $this->db->where('id', $id);
+            $this->db->update('users', $data);
+            redirect('c_admin/detail');
+        }
 
-            function logout() {
-                $this->session->unset_userdata('logged_in');
-                session_destroy();
-                redirect('c_index', 'refresh');
-            }
-
+        function logout() {
+            $this->session->unset_userdata('logged_in');
+            session_destroy();
+            redirect('c_index', 'refresh');
         }
 
     }
+
+}
 
 ?>

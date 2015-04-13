@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 
 class C_login extends CI_Controller {
 
@@ -12,6 +12,8 @@ class C_login extends CI_Controller {
 
     Public function index() {
         //$this->load->helper('form');
+        $this->session->unset_userdata('logged_in');
+        session_destroy();
         $this->load->view('v_login');
     }
 
