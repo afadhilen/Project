@@ -13,19 +13,18 @@
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
     </head>
     <body>
-        <div class ='container'>
-            <div class='jumbotron'>
-                <center><h1> Admin Login Page </h1>
-            </div>
-            <div class='col-lg-8 col-lg-offset-2'>
-                <div class ='row top-buffer'>
-                    <div class ="col-lg-6 col-lg-offset-3">
-                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
-                        <?php echo form_open('c_admin_verifylogin'); ?>
-                        
-                            <form class="form" method="post"> 
-                                <table class ='table table-bordered'>
-                                <td><div class='form-group'>
+        <div class='jumbotron'>
+            <center><h1> Admin Login Page </h1>
+        </div>
+        <div class='col-lg-8 col-lg-offset-2'>
+            <div class ='row top-buffer'>
+                <div class ="col-lg-6 col-lg-offset-3">
+                    <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
+                    <?php echo form_open('c_admin_verifylogin'); ?>
+
+                    <form class="form" method="post"> 
+                        <table class ='table table-bordered'>
+                            <td><div class='form-group'>
                                     <label for="username">Username:</label>
                                     <input type = "text" name = "username" placeholder = "Enter Username" class ='form-control' id="inputError1 "value=""/>    
                                 </div><br>
@@ -37,19 +36,17 @@
                                     <br>
                                     <input type ="submit" name = "Login" value="Login" class ='btn btn-primary btn-lg'/>
                                 </div>
-                            </table></form>
-                        <?php echo form_close(); ?>
-                    </div></div>
-            </div>
+                        </table></form>
+                    <?php echo form_close(); ?>
+                </div></div>
         </div>
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    </div>
-</body>
-<footer>
-    <div class='col-lg-offset-10'>
-        <small>&copy; Powered by ASUS</small>
-    </div>
-</footer>
+    </body>
+    <footer>
+        <div class='col-lg-10 col-lg-offset-10'>
+            <small>&copy; Powered by ASUS</small>
+        </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </html>
 

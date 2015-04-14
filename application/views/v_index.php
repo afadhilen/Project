@@ -20,14 +20,15 @@
     </head>
     <body>
     <center>
-        <div class ='container'>
-            <div class ='jumbotron'>
-                <h1> Book Store and Record Data </h1>
-            </div>
-            <div class ='row top-buffer'>
-                <div class ="col-lg-6 col-lg-offset-3">
-                    <!--<h4> Login as: </h4>-->
-                    <div class ='jumbotron'>
+        <div class ='jumbotron'>
+            <h1> Book Store and Record Data </h1>
+        </div>
+        <br><br><br>
+        <div class ='row top-buffer'>
+            <div class ="col-lg-6 col-lg-offset-3">
+                <!--<h4> Login as: </h4>-->
+                <div class ="container">
+                    <div class ="col-lg-5 col-lg-offset-1">
                         <table class ='table-responsive'>
                             <a href ="C_admin/index" class="btn btn-primary btn-block btn-lg" size="15"> Login as Admin </a>
                             <a href ="C_login/index" class="btn btn-default btn-block btn-lg" size="15"> Login as User </a>
@@ -35,7 +36,8 @@
                     </div>
                 </div>
             </div>
-        </div></center>
+        </div>
+    </center>
 </body>
 <footer>
     <div class='col-lg-offset-10'>

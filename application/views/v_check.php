@@ -16,23 +16,24 @@
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
     </head>
     <body>
-        <div class='jumbotron'>
-            <center><h1>  <h1>Store Book</h1>
-                    </div>
-                    <div class='col-lg-8 col-lg-offset-2'>
-                        <div class ='row top-buffer'>
-                            <div class ="col-lg-6 col-lg-offset-3">
-                                <form action ='<?php echo base_url() . 'c_check/'; ?>' method='post' name ='store'>
-                                    <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
-                                    <table class ='table table-bordered'>
-                                        <td><div class='form-group'>
-                                                <label for="bookid">Check Book ID:</label>
-                                                <input type="text" name="bookid" size ='4' class='form-control'>
-                                            </div><br>
-                                            <input type ="submit" name = "submit" value="Check"  class ='btn btn-default btn-lg'/>
-                                    </table></form>
-                            </div>
-                        </div>
-                    </div>
-                    </body>
-                    </html>
+
+        <div class='col-lg-8 col-lg-offset-2'>
+            <div class ='row top-buffer'>
+                <div class ="col-lg-6 col-lg-offset-3">
+                    <center><h1> Check Book ID </h1></center>
+                    <br><br>
+                    <form action ='<?php echo base_url() . 'c_check/'; ?>' method='post' name ='store'>
+                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
+                        <table class ='table table-bordered'>
+                            <td><div class='form-group'>
+                                    <label for="bookid">Check Book ID:</label>
+                                    <input type="text" name="bookid" size ='4' class='form-control'>
+                                </div><br>
+                                <input type ="submit" name = "submit" value="Check"  class ='btn btn-default btn-lg'/>
+                        </table></form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

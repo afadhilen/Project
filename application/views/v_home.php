@@ -23,40 +23,23 @@
                         <div class ='row top-buffer'>
                             <div class ="col-lg-6 col-lg-offset-3">
                                 <?php
-                                /**
-                                  if (isset($msg1) && ($msg2)) {
-                                  echo '<div class="alert alert-info" role="alert">';
-                                  echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
-                                  echo '<span class="sr-only">Error: </span>';
-                                  echo '  ';
-                                  echo $msg1;
-                                  echo '</br>';
-                                  echo '</br>';
-                                  echo $msg2;
-                                  echo '</div>';
-                                  } elseif (isset($msg3)) {
-                                  echo '<div class="alert alert-danger" role="alert">';
-                                  echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">  </span>';
-                                  echo '<span class="sr-only">Ok: </span>';
-                                  echo '  ';
-                                  echo $msg3;
-                                  echo '</div>';
-                                  } elseif (isset($msg4)) {
-                                  echo '<div class="alert alert-success" role="alert">';
-                                  echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
-                                  echo '<span class="sr-only">Ok: </span>';
-                                  echo '  ';
-                                  echo $msg4;
-                                  echo '</div>';
-                                  } else {
-
-                                  }* */
                                 if (isset($msgnew)) {
                                     echo '<div class="alert alert-info" role="alert">';
                                     echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
                                     echo '<span class="sr-only">Error: </span>';
                                     echo '  ';
                                     echo $msgnew;
+                                    echo '</div>';
+                                } else if (isset($msg1) && ($msg2)) {
+                                    echo '<div class="alert alert-info" role="alert">';
+                                    echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
+                                    echo '<span class="sr-only">Error: </span>';
+                                    echo '  ';
+                                    echo $msg1;
+                                    echo '</br>';
+                                    echo '</br>';
+                                    echo $msg2;
+                                    echo '</div>';
                                 } elseif (isset($msg3)) {
                                     echo '<div class="alert alert-danger" role="alert">';
                                     echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">  </span>';

@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class='jumbotron'>
-            <center><h1>  <h1>Form Update</h1>
+            <center><h1>Book Data</h1> </center>
                     </div>
                     <div class='col-lg-8 col-lg-offset-2'>
                         <div class ='row top-buffer'>
@@ -31,6 +31,7 @@
                                     echo '  ';
                                     echo $msg1;
                                     echo '</br>';
+                                    echo '</div>';
                                 } else if (isset($msg2)) {
                                     echo '<div class="alert alert-info" role="alert">';
                                     echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
@@ -38,14 +39,15 @@
                                     echo '  ';
                                     echo $msg2;
                                     echo '</br>';
+                                    echo '</div>';
                                 }
-                                 $bookid = $this->input->post('bookid');
+                                $bookid = $this->input->post('bookid');
                                 ?>      
                                 <form action ='<?php echo base_url() . 'c_check/book_check/' . $bookid; ?>' method='post'>
                                     <?php
                                     echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
 
-                                   
+
                                     $this->db->where('book_id', $bookid);
                                     $this->db->from('books');
 
@@ -77,12 +79,13 @@
                                                     </div>
                                                     <input type ="submit" name = "submit" value="Store Book"  class ='btn btn-default btn-lg'/>
                                                     <?php
-                                    }}
-                                                ?>
-                                               
-                                            </table></form></div>
-                                            </div>
-                                            </div>
+                                                }
+                                            }
+                                            ?>
 
-                                            </body>
-                                            </html>
+                                    </table></form></div>
+                        </div>
+                    </div>
+
+                    </body>
+                    </html>

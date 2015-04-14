@@ -31,6 +31,7 @@
                                     echo '  ';
                                     echo $msgnew;
                                     echo '</br>';
+                                    echo '</div>';
                                 }
                                 ?>
                                 <table class ='table-responsive'>
