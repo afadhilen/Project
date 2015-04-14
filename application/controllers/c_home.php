@@ -25,21 +25,15 @@ class C_home extends CI_Controller {
 
             if ($this->form_validation->run() == TRUE) {
 
-
-
                 $bookid = $this->input->post('bookid');
                 $bookname = $this->input->post('bookname');
-
                 $pcs = $this->input->post('pcs');
 
                 $this->load->model('m_products');
                 $book = $this->m_products->store($bookid);
 
-
-
                 /**
-                 * 
-                 * $this->db->select('*');
+                  $this->db->select('*');
                   $this->db->from('books');
                   $this->db->where('book_id', $bookid);
                   $book = $this->db->get()->row();

@@ -31,6 +31,7 @@
                                         echo '  ';
                                         echo $msg1;
                                         echo '</br>';
+                                        echo '</br>';
                                         echo $msg2;
                                         echo '</div>';
                                     } elseif (isset($msg3)) {
@@ -51,7 +52,7 @@
                                         
                                     }
                                     ?>
-                                    <form action ='<?php echo base_url() . 'C_home/index'; ?>' method='post' name ='store'>
+                                    <form action ='<?php echo base_url() . 'C_home/'; ?>' method='post' name ='store'>
                                         <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
 
                                         <table class ='table table-bordered'>

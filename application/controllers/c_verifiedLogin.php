@@ -27,7 +27,7 @@ class C_verifiedLogin extends CI_Controller {
             redirect('c_admin');}*/
         else {
             //Go to private area
-            redirect('c_home');
+            redirect('c_check');
         }
     }
 
