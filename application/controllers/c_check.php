@@ -27,9 +27,13 @@ class C_check extends CI_Controller {
                 $this->load->model('m_products');
                 $book = $this->m_products->store($bookid);
 
-                if ($book->book_id == $bookid) {
-                    $view_data['msg1'] = "Book ID: $bookid already in database";
-                } else if ($book->book_id != $bookid) {
+                // if (isset($book->book_id) && ( $book->book_id== $bookid))
+
+                if (isset($book->book_id)) {
+                    if ($book->book_id == $bookid) {
+                        $view_data['msg1'] = "Book ID: $bookid already in database";
+                    }
+                } else if (!isset($book->book_id)) {
                     $view_data['msg2'] = "Book ID: $bookid not exist yet. Add to database?";
                     $this->load->view('v_home');
                 }
