@@ -57,12 +57,12 @@
                                                         <label for="pcs">Quantity:</label>
                                                         <input type="text" name="pcs" size ='4' class='form-control' value ='<?php echo $rows->pcs; ?>'>
                                                     </div>
-                                                    <input type ="submit" name = "submit" value="Store Book"  class ='btn btn-default btn-lg' value ='<?php echo $rows->firstname; ?>'/>
+                                                    <input type ="submit" class ='btn btn-default btn-lg' name = "submit" value="Update"/>
                                             </table></br>
                                             <?php
                                         }
                                         ?>  
-                                        <input type ="submit" class ='btn btn-default btn-lg' name = "submit" value="Update"/>
+
                                         </table></form>
                                 </div>
                             </div>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Check your ID</title>
+        <title>Books Edit</title>
 
         <link rel="stylesheet" type="text/css" href="style.css">        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -14,25 +14,30 @@
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
 
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
+
     </head>
     <body>
         <div class='jumbotron'>
-            <center><h1>  <h1>Store Book</h1>
+            <center><h1>  <h1>Form Books Update</h1>
                     </div>
                     <div class='col-lg-8 col-lg-offset-2'>
                         <div class ='row top-buffer'>
                             <div class ="col-lg-6 col-lg-offset-3">
-                                <form action ='<?php echo base_url() . 'c_check/'; ?>' method='post' name ='store'>
-                                    <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
-                                    <table class ='table table-bordered'>
-                                        <td><div class='form-group'>
-                                                <label for="bookid">Check Book ID:</label>
-                                                <input type="text" name="bookid" size ='4' class='form-control'>
-                                            </div><br>
-                                            <input type ="submit" name = "submit" value="Check"  class ='btn btn-default btn-lg'/>
-                                    </table></form>
-                            </div>
-                        </div>
+                                <?php
+                                if (isset($msgnew)) {
+                                    echo '<div class="alert alert-info" role="alert">';
+                                    echo '<span class="glyphicon glyphicon-ok" aria-hidden="true">  </span>';
+                                    echo '<span class="sr-only">Error: </span>';
+                                    echo '  ';
+                                    echo $msgnew;
+                                    echo '</br>';
+                                }
+                                ?>
+                                <table class ='table-responsive'>
+                                    <a href ="<?php echo base_url() . 'c_home/' ?>" class="btn btn-primary btn-block btn-lg" size="15"> Yes </a>
+                                    <a href ="<?php echo base_url() . 'c_check' ?>" class="btn btn-default btn-block btn-lg" size="15"> No </a>
+                                </table></div>
+                        </div></div>
                     </div>
                     </body>
                     </html>

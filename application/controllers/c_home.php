@@ -10,7 +10,7 @@ class C_home extends CI_Controller {
 
     function index() {
         //$this->load->view('v_home');
-            if ($this->session->userdata('logged_in')) {
+        if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
             //$this->load->view('v_home', $data);
@@ -30,7 +30,7 @@ class C_home extends CI_Controller {
                 $pcs = $this->input->post('pcs');
 
                 $this->load->model('m_products');
-                $book = $this->m_products->store($bookid);
+                $book = $this->m_products->store($bookid, $bookname);
 
                 /**
                   $this->db->select('*');
@@ -49,7 +49,12 @@ class C_home extends CI_Controller {
                 } else if (isset($book->book_id) && $book->name != $bookname) {
                     //when book id and book name is not match
                     $view_data['msg3'] = "Book ID and Book Name did not match";
-                } else {
+                }
+                else if (isset($book->name) && $book->name == $bookname) {
+                    //when book id and book name is not match
+                    $view_data['msg5'] = "Same Name";
+                }
+                else {
                     $data = array(
                         'book_id' => $bookid,
                         'name' => $bookname,

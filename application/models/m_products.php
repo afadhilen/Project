@@ -15,6 +15,14 @@ class M_products extends CI_Model {
 
         return $this->db->get()->row();
     }
+        public function book($bookname) {
+
+        $this->db->select('*');
+        $this->db->from('books');
+        $this->db->where('name', $bookname);
+
+        return $this->db->get()->row();
+    }
 
     public function get($bookid = null) {
 
