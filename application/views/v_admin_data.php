@@ -16,25 +16,22 @@ and open the template in the editor.
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/main.css'); ?>">
-        
+
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
     </head>
-    <center><div class ='container'>
-            <div class ='jumbotron'>
-                <h1> Admin Record Data </h1>
-            </div>
-            <div class ='row top-buffer'>
-                <div class ="col-lg-8 col-lg-offset-2">
-                    <div class ='form-group'>
-                        <td><a class="btn btn-default btn-primary btn-lg" href="<?= site_url("c_admin/detail") ?>"> Members</a> OR <a class="btn btn-default btn-defult btn-lg" href="<?= site_url("c_admin/product") ?>">Products</a></td> 
-                    </div>
-                </div>
-            </div>
-        </div></center>
+    <div class ='jumbotron'>
+        <center><h1> Admin Record Data </h1></center>
+    </div>
+    <div class ='row top-buffer'>
+        <div class ='form-group'>
+            <center><td><a class="btn btn-default btn-primary btn-lg" href="<?= site_url("c_admin/detail") ?>"> Members</a> OR <a class="btn btn-default btn-defult btn-lg" href="<?= site_url("c_admin/product") ?>">Products</a></td> </center>
+        </div>
+    </div>
+</div>
 </body>
 <footer>
-    <div class='col-lg-offset-10'>
+    <div class='col-lg-10 col-lg-offset-10'>
         <small>&copy; Powered by ASUS</small>
     </div>
 </footer>
