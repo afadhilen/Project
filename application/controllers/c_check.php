@@ -35,7 +35,8 @@ class C_check extends CI_Controller {
                         $this->load->view('v_book_check', $view_data);
                     }
                 } else if (!isset($book->book_id)) {
-                    $view_data['msgnew'] = "Book ID: $bookid not exist yet. Add to database?";
+                    $view_data['msgnew'] = "Book ID: $bookid is not exist";
+                    $view_data['msgnew1'] = "Go to Store Book Page?";
                     $view_data['bookid'] = $bookid;
                     $this->load->view('v_confirmation', $view_data);
                     //redirect('c_home', $view_data);

@@ -16,43 +16,41 @@
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
     </head>
-    <center><div class ='container'>
-            <div class ='jumbotron'>
-                <h1> User Record Data </h1>
-            </div>
-            <div class ='row top-buffer'>
-                <div class='col-lg-8 col-lg-offset-2'>
-                    <table class ="table-responsive">
-                        <table class ="table">
-                            <thead>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Option</th>
-                            </thead>
+    <div class ='jumbotron'>
+        <center><h1> Users Catalog </h1></center>                s
+    </div><br><br>
+    <div class ='container'>
+        <div class ='row top-buffer'>
+            <div class='col-lg-8 col-lg-offset-2'>
+                <table class ="table-responsive">
+                    <table class ="table table-striped table-hover">
+                        <thead>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Option</th>
+                        </thead>
 
-                            <?php foreach ($users as $_key => $_value): ?> 
-                                <tr>
-                                    <td> <?= $_value->id ?></td>
-                                    <td><?= $_value->username ?></td>
-                                    <td><?= $_value->password ?></td>
-                                    <td><?= $_value->firstname ?></td>
-                                    <td><?= $_value->lastname ?></td>
-                                    <td><?= $_value->email ?></td>
-
-                                    <td><a href="<?= site_url("c_admin/delete/{$_value->id}") ?>">Delete</a> | <a href="<?= site_url("c_admin/updateform/{$_value->id}") ?>">Edit</a></td>
-
-                                </tr>
-                            <?php endforeach; ?>
-                        </table></table>
-                    <center><a href ="<?php echo base_url() . 'c_home/logout' ?>"  class ='btn btn-primary btn-sm'> Log Out </a></center>
-                </div>
+                        <?php foreach ($users as $_key => $_value): ?> 
+                            <tr>
+                                <td> <?= $_value->id ?></td>
+                                <td><?= $_value->username ?></td>
+                                <td><?= $_value->password ?></td>
+                                <td><?= $_value->firstname ?></td>
+                                <td><?= $_value->lastname ?></td>
+                                <td><?= $_value->email ?></td>
+                                <td><a href="<?= site_url("c_admin/delete/{$_value->id}") ?>">Delete</a> | <a href="<?= site_url("c_admin/updateform/{$_value->id}") ?>">Edit</a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table></table>
+                <center><a href ="<?php echo base_url() . 'c_home/admin' ?>"  class ='btn btn-primary btn-sm'> Back </a></center>
             </div>
         </div>
-    </center>
+    </div>
+</center>
 </body>
 <footer>
     <div class='col-lg-offset-10'>

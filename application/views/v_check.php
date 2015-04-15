@@ -16,24 +16,53 @@
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
     </head>
     <body>
-
-        <div class='col-lg-8 col-lg-offset-2'>
+        <br><br>
+        <div class="container">
             <div class ='row top-buffer'>
-                <div class ="col-lg-6 col-lg-offset-3">
-                    <center><h1> Check Book ID </h1></center>
-                    <br><br>
-                    <form action ='<?php echo base_url() . 'c_check/'; ?>' method='post' name ='store'>
-                        <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
-                        <table class ='table table-bordered'>
-                            <td><div class='form-group'>
-                                    <label for="bookid">Check Book ID:</label>
-                                    <input type="text" name="bookid" size ='4' class='form-control'>
-                                </div><br>
-                                <input type ="submit" name = "submit" value="Check"  class ='btn btn-default btn-lg'/>
-                        </table></form>
+                <div class='col-sm-6 col-xs-12'>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>Insert Book ID</h3> </div>
+                        <div class="panel-body">
+                            <br>
+                            <form action ='<?php echo base_url() . 'c_check/'; ?>' method='post' name ='store'>
+                                <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
+                                <table class ='table table-bordered'>
+                                    <td><div class='form-group'>
+                                            <label for="bookid">Book ID:</label>
+                                            <div class ="input-group">
+                                                <div class ="input-group-addon"> <span class ="glyphicon glyphicon-barcode"> </span> </div>
+                                                <input type="text" name="bookid" class='form-control '>
+                                            </div>
+                                            <br>
+                                            <input type ="submit" name = "submit" value="Check"  class ='btn btn-default btn-lg'/>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-6 col-xs-12'>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3>Book ID Rule: </h3> </div>
+                        <div class="panel-body">
+                            <ol>
+                                <br>
+                                <li>Book ID is the simulation form of ISBN (International Standard Book Number)</li>
+                                <li>Book ID must be in 3 digit integer number, and separated by dash</li>
+                                <li>Book ID order : X-XX</li>
+                                <ul class="list-inline">
+                                    <li> e.g: </li>
+                                    <li>  0-01 </li>
+                                    <li>  1-23 </li>
+                                </ul>
+                                <li>If Book ID already exist, it go to the Book ID data</li>
+                                <li>If no, then go to Book Store Page</li>
+                            </ol>
+                            <br>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <a href ="<?php echo base_url() . 'c_login/' ?>" class ="btn btn-default btn-sm"> Log Out </a>
         </div>
-    </div>
-</body>
+    </body>
 </html>

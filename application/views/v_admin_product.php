@@ -15,44 +15,45 @@
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
     </head>
-    <center><div class ='container'>
-            <div class ='jumbotron'>
-                <h1> Product Record Data </h1>
-            </div>
-            <div class ='row top-buffer'>
-                <div class='col-lg-8 col-lg-offset-2'>
-                    <table class ="table-responsive">
-                        <table class ="table">
-                            <thead>
-                            <th>Book ID</th>
-                            <th>Book Name</th>
-                            <th>Book Type</th>
-                            <th>Quantity</th>
-                            <th>Option</th>
-                            </thead>
+    <div class ='jumbotron'>
+        <center><h1> Books Catalog </h1></center>
+    </div>
+    <br><br>
+    <div class ='container'>
+        <div class ='row top-buffer'>
+            <div class='col-lg-8 col-lg-offset-2'>
+                <table class ="table-responsive">
+                    <table class ="table table-striped table-hover">
+                        <thead>
+                        <th>Book ID</th>
+                        <th>Book Name</th>
+                        <th>Book Type</th>
+                        <th>Quantity</th>
+                        <th>Option</th>
+                        </thead>
 
-                            <?php
-                            $this->db->select('*');
-                            $this->db->from('books');
-                            $result = $this->db->get();
-                            $query = $result->result();
+                        <?php
+                        $this->db->select('*');
+                        $this->db->from('books');
+                        $result = $this->db->get();
+                        $query = $result->result();
 
-                            foreach ($query as $row):
-                                ?> 
-                                <tr>
-                                    <td> <?= $row->book_id ?></td>
-                                    <td><?= $row->name ?></td>
-                                    <td><?= $row->type ?></td>
-                                    <td><?= $row->pcs ?></td>
-                                    <td><a href="<?= site_url("c_admin/deletebook/{$row->book_id}") ?>">Delete</a> | <a href="<?= site_url("c_admin/updatebookform/{$row->book_id}") ?>">Edit</a></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </table></table>
-                    <center><a href ="<?php echo base_url() . 'c_home/logout' ?>"  class ='btn btn-primary btn-sm'> Log Out </a></center>
-                </div>
+                        foreach ($query as $row):
+                            ?> 
+                            <tr>
+                                <td> <?= $row->book_id ?></td>
+                                <td><?= $row->name ?></td>
+                                <td><?= $row->type ?></td>
+                                <td><?= $row->pcs ?></td>
+                                <td><a href="<?= site_url("c_admin/deletebook/{$row->book_id}") ?>">Delete</a> | <a href="<?= site_url("c_admin/updatebookform/{$row->book_id}") ?>">Edit</a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table></table>
+                <center><a href ="<?php echo base_url() . 'c_home/admin' ?>"  class ='btn btn-primary btn-sm'> Back </a></center>
             </div>
         </div>
-    </center>
+    </div>
+</center>
 </body>
 <footer>
     <div class='col-lg-offset-10'>

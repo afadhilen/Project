@@ -20,18 +20,35 @@ and open the template in the editor.
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
     </head>
-    <div class ='jumbotron'>
-        <center><h1> Admin Record Data </h1></center>
-    </div>
-    <div class ='row top-buffer'>
-        <div class ='form-group'>
-            <center><td><a class="btn btn-default btn-primary btn-lg" href="<?= site_url("c_admin/detail") ?>"> Members</a> OR <a class="btn btn-default btn-defult btn-lg" href="<?= site_url("c_admin/product") ?>">Products</a></td> </center>
+    <center>
+        <div class ='jumbotron'>
+            <h1> Admin Catalog Page </h1>
+        </div>
+    </center>
+    <div class="container">
+        <br><br>
+        <div class ='row top-buffer'>
+            <div class ="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3>Choose Catalog:</h3> </div>
+                    <div class="panel-body">
+                        <div class ="input-group">
+                            <div class ="input-group-addon"> <span class ="glyphicon glyphicon-king"> </span> 
+                                <p><br><a class="btn btn-primary btn-lg" href="<?= site_url("c_admin/detail") ?>"> Users</a></p>
+                            </div>
+                            <div class ="input-group-addon"> <span class ="glyphicon glyphicon-book"> </span> 
+                                <p><br><a class="btn btn-default btn-lg" href="<?= site_url("c_admin/product") ?>">Books</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href ="<?php echo base_url() . 'c_admin/' ?>" class ="btn btn-default btn-sm"> Log Out </a>
+            </div>
         </div>
     </div>
-</div>
 </body>
 <footer>
-    <div class='col-lg-10 col-lg-offset-10'>
+    <div class='col-md-offset-10'>
         <small>&copy; Powered by ASUS</small>
     </div>
 </footer>

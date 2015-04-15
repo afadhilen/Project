@@ -17,23 +17,27 @@
 
     </head>
     <body>
+        <div class='jumbotron'>
+            <center><h1>Sign Up Success</h1>
+        </div>
         <div class ='container'>
-            <div class='jumbotron'>
-                <center><h1>Sign Up Success</h1>
-                        </div>
-                        <div class='col-lg-8 col-lg-offset-2'>
-                            <div class ='row top-buffer'>
-                                <div class ="col-lg-6 col-lg-offset-3">
-                                    <h4> Account has created Please <a href = "<?php echo base_url() . 'C_login/' ?>"> Login </a> </h4>
-                                </div>
+            <div class='col-lg-8 col-lg-offset-2'>
+                <div class ='row top-buffer'>
+                    <div class ="col-lg-6 col-lg-offset-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3>Account created</h3> </div>
+                            <div class="panel-body">
+                                <a href = "<?php echo base_url() . 'C_login/' ?>" class="btn btn-primary"> Login </a>
                             </div>
                         </div>
-                        </div>
-                </center>
-                </body>
-                <footer>
-                    <div class='col-lg-offset-10'>
-                        <small>&copy; Powered by ASUS</small>
                     </div>
-                </footer>
-                </html>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class='col-lg-offset-10'>
+            <small>&copy; Powered by ASUS</small>
+        </div>
+    </footer>
+</html>

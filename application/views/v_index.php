@@ -21,26 +21,27 @@
     <body>
     <center>
         <div class ='jumbotron'>
-            <h1> Book Store and Record Data </h1>
+            <h1> Book Management System </h1>
         </div>
-        <br><br><br>
+    </center>
+    <div class="container">
+        <br><br>
         <div class ='row top-buffer'>
-            <div class ="col-lg-6 col-lg-offset-3">
-                <!--<h4> Login as: </h4>-->
-                <div class ="container">
-                    <div class ="col-lg-5 col-lg-offset-1">
-                        <table class ='table-responsive'>
-                            <a href ="C_admin/index" class="btn btn-primary btn-block btn-lg" size="15"> Login as Admin </a>
-                            <a href ="C_login/index" class="btn btn-default btn-block btn-lg" size="15"> Login as User </a>
-                        </table>
+            <div class ="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h4> Login as: </h4></div>
+                    <div class="panel-body">
+                        <a href = '<?php echo base_url() . 'c_admin/' ?>' class="btn btn-primary btn-block btn-lg" size="15"> Admin </a>
+                        <a href = '<?php echo base_url() . 'c_login/' ?>' class="btn btn-default btn-block btn-lg" size="15"> User </a>
                     </div>
                 </div>
             </div>
         </div>
-    </center>
+    </div>
 </body>
+<br><br><br><br><br><br><br><br><br><br>
 <footer>
-    <div class='col-lg-offset-10'>
+    <div class='col-md-offset-10'>
         <small>&copy; Powered by ASUS</small>
     </div>
 </footer>

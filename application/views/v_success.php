@@ -17,15 +17,25 @@
 
     </head>
     <body>
+        <br><br>
         <div class ='container'>
-            <div class='jumbotron'>
-                <center><h1>  <h1>Form Books Update</h1>
+            <div class='col-lg-8 col-lg-offset-2'>
+                <div class ='row top-buffer'>
+                    <div class ="col-lg-6 col-lg-offset-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3>Book Updated</h3> </div>
+                            <div class="panel-body">
+                                <center><a href = "<?php echo base_url() . 'c_check/' ?>" class="btn btn-primary"> Back </a></center>
+                            </div>
                         </div>
-                        <div class='col-lg-8 col-lg-offset-2'>
-                            <div class ='row top-buffer'>
-                                <div class ="col-lg-6 col-lg-offset-3">
-        <?php
-        echo 'Success';
-        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
+    <footer>
+        <div class='col-lg-offset-10'>
+            <small>&copy; Powered by ASUS</small>
+        </div>
+    </footer>
 </html>

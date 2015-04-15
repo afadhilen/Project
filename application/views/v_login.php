@@ -16,34 +16,49 @@
         <div class='jumbotron'>
             <center><h1> User Login Page </h1>
         </div>
-        <div class='col-lg-8 col-lg-offset-2'>
-            <div class ='row top-buffer'>
-                <div class ="col-lg-6 col-lg-offset-3">
-                    <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
-                    <?php echo form_open('c_verifiedlogin'); ?>
-                    <?php echo isset($msg) ? $msg : ''; ?>
-                    <table class ='table table-bordered'>
-                        <td><div class='form-group'>
-                                <label for="username">Username:</label>
-                                <input type = "text" name = "username" placeholder = "Enter Username" class ='form-control' />
-                            </div><br>
-                            <div class='form-group'>
-                                <label for="password">Password:</label>
-                                <input type = "password" name = "password" placeholder = "Enter Password" class ='form-control' />  
-                            </div><br>
-                            <div class='form-group'>
-                                <input type ="submit" name = "Login" value="Login" class ='btn btn-primary btn-lg'/>
-
-                                <a href ='<?php echo base_url() . 'c_signup/' ?>' class="btn btn-default btn-lg"> Signup </a>
-                            </div></table>
-                    <?php echo form_close(); ?>
-
+        <br><br>
+        <div class ="container">
+            <div class='col-lg-8 col-lg-offset-2'>
+                <div class ='row top-buffer'>
+                    <div class ="col-lg-6 col-lg-offset-3">
+                        <?php echo form_open('c_verifiedlogin'); ?>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3> Login: </h3></div>
+                            <div class="panel-body">
+                                <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
+                                <?php echo isset($msg) ? $msg : ''; ?>
+                                <table class ='table table-bordered'>
+                                    <td><div class='form-group'>
+                                            <label for="username">Username:</label><br>
+                                            <div class ="input-group">
+                                                <div class ="input-group-addon"> <span class ="glyphicon glyphicon-user"> </span> </div>
+                                                <input type = "text" name = "username" placeholder = "Enter Username" class ='form-control' />
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class='form-group'>
+                                            <label for="password">Password:</label>
+                                            <div class ="input-group">
+                                                <div class ="input-group-addon"><span class="glyphicon glyphicon-lock"></span> </div>
+                                                <input type = "password" name = "password" placeholder = "Enter Password" class ='form-control' />  
+                                            </div><br>
+                                            <div class='form-group'>
+                                                <input type ="submit" name = "Login" value="Login" class ='btn btn-primary btn-lg'/>
+                                                <a href ='<?php echo base_url() . 'c_signup/' ?>' class="btn btn-default btn-lg"> Signup </a>
+                                            </div>
+                                        </div>
+                                </table>
+                                <a href = '<?php echo base_url() . 'c_index/' ?>'> Back </a>
+                                <?php echo form_close(); ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+    </body><br>
     <footer>
-        <div class='col-lg-10 col-lg-offset-10'>
+        <div class='col-md-offset-10'>
             <small>&copy; Powered by ASUS</small>
         </div>
     </footer>
