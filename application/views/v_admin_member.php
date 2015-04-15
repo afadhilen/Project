@@ -15,9 +15,22 @@
 
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
+        <style>
+            .jumbotron{
+
+                background-color: #337AB7;
+                background-attachment:fixed;
+                background-repeat: no-repeat;
+                color:white;
+                min-height: 200px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        </style>
+        
     </head>
     <div class ='jumbotron'>
-        <center><h1> Users Catalog </h1></center>                s
+        <center><h1> Users Catalog </h1></center>                
     </div><br><br>
     <div class ='container'>
         <div class ='row top-buffer'>

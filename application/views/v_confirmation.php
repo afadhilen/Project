@@ -15,6 +15,20 @@
 
         <link rel="shortcut icon" href="http://www.freefavicon.com/freefavicons/objects/registry-book-152-75799.png" />
 
+        <style>
+            .jumbotron{
+
+                background-color: #337AB7;
+                background-attachment:fixed;
+                background-repeat: no-repeat;
+                color:white;
+                min-height: 200px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        </style>
+        
+        
     </head>
     <body>
         <br><br>
@@ -22,7 +36,7 @@
             <div class='col-lg-8 col-lg-offset-2'>
                 <div class ='row top-buffer'>
                     <div class ="col-lg-6 col-lg-offset-3">
-                        <div class="panel panel-default">
+                        <div class="panel panel-primary">
                             <div class="panel-heading"><h3>Confirmation</h3> </div>
                             <div class="panel-body">
                                 <?php
