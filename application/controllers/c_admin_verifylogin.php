@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 session_start();
 
-class C_admin_verifyLogin extends CI_Controller {
+class C_admin_verifylogin extends CI_Controller {
 
     function __construct() {
         parent::__construct();
