@@ -23,9 +23,8 @@ class C_verifiedlogin extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             //Field validation failed.  User redirected to login page
             $this->load->view('v_login');
-        } /*elseif ($status == 1) {
-            redirect('c_admin');}*/
-        else {
+        } /* elseif ($status == 1) {
+          redirect('c_admin');} */ else {
             //Go to private area
             redirect('c_check');
         }
@@ -39,21 +38,21 @@ class C_verifiedlogin extends CI_Controller {
         $result = $this->m_users->login($username, $password);
 
         $view_data = array();
-        
+
         if ($result) {
             $sess_array = array();
             foreach ($result as $row) {
                 $sess_array = array(
                     'id' => $row->id,
                     'username' => $row->username,
-                    //'status' => $row->status
+                        //'status' => $row->status
                 );
                 $this->session->set_userdata('logged_in', $sess_array);
             }
             return TRUE;
         } else {
             $this->form_validation->set_message('check_database', 'Invalid username or password');
-            $view_data['msg'] = '"Dont have account?" <a href ="' . site_url('C_signup/index') . '"> Sign Up </a>';
+            //$view_data['msg'] = '"Dont have account?" <a href ="' . site_url('C_signup/index') . '"> Sign Up </a>';
             return FALSE;
         }
     }
