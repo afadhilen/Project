@@ -27,8 +27,8 @@
                 margin-bottom: 0px;
             }
         </style>
-        
-        
+
+
     </head>
     <body>
         <div class='jumbotron'>
@@ -44,8 +44,6 @@
                                 <div class="panel-heading"><h3>Edit Data: </h3></div>
                                 <div class="panel-body">
                                     <?php
-                                    echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
-
                                     $id = $this->uri->segment(3);
                                     $this->db->where('id', $id);
                                     $this->db->from('users');
@@ -55,54 +53,63 @@
                                     foreach ($query->result() as $rows) {
                                         ?>
                                         <table class ='table table-bordered'>
-                                            <td><div class='form-group'>
+                                            <td><div class='form-group <?php echo form_error('firstname') !== "" ? 'has-error' : ''; ?>'>
                                                     <label for="username">First Name:</label>
+                                                    <?php echo form_error('firstname', '<span id="helpBlock" class="help-block">', '</span>'); ?>
                                                     <div class ="input-group">
                                                         <div class ="input-group-addon"> <span class ="glyphicon glyphicon-pencil"> </span> </div>
                                                         <input type = "text" name = "firstname" class ='form-control' value ='<?php echo $rows->firstname; ?>'/>		
-                                                    </div></br>
-                                                    <div class='form-group'>
-                                                        <label for ='lastname'>Last Name:</label>
-                                                        <div class ="input-group">
-                                                            <div class ="input-group-addon"> <span class ="glyphicon glyphicon-pencil"> </span> </div>
-                                                            <input type = "text" name = "lastname" class ='form-control' value ='<?php echo $rows->lastname; ?>'/>			
-                                                        </div></br>
-                                                        <div class='form-group'>
-                                                            <label for='username'>Username:</label>
-                                                            <div class ="input-group">
-                                                                <div class ="input-group-addon"> <span class ="glyphicon glyphicon-user"> </span> </div>
-                                                                <input type = "text" name = "username" class ='form-control' value ='<?php echo $rows->username; ?>'/>
-                                                            </div></br>
-                                                            <div class='form-group'>
-                                                                <label for='password'>Password:</label>
-                                                                <div class ="input-group">
-                                                                    <div class ="input-group-addon"> <span class ="glyphicon glyphicon-lock"> </span> </div>
-                                                                    <input type = "text" name = "password" class ='form-control' value ='<?php echo $rows->password; ?>'/>
-                                                                </div></br>
-                                                                <div class='form-group'>
-                                                                    <label for='email'>Email:</label><div class ="input-group">
-                                                                        <div class ="input-group-addon"> @ </div>
-                                                                        <input type = "text" name = "email" class ='form-control' value ='<?php echo $rows->email; ?>'/>
-                                                                    </div></br>
-                                                                    <?php
-                                                                }
-                                                                ?>  
-
-                                                                <input type ="submit" class ='btn btn-default btn-lg' name = "submit" value="Update"/>
-                                                                </table>
-                                                                <a href ="<?php echo base_url() . 'c_admin/detail' ?>"> Back </a>
-                                                            </div>
-                                                        </div>
+                                                    </div></div></br>
+                                                <div class='form-group <?php echo form_error('lastname') !== "" ? 'has-error' : ''; ?>'>
+                                                    <label for ='lastname'>Last Name:</label>
+                                                    <?php echo form_error('lastname', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                    <div class ="input-group">
+                                                        <div class ="input-group-addon"> <span class ="glyphicon glyphicon-pencil"> </span> </div>
+                                                        <input type = "text" name = "lastname" class ='form-control' value ='<?php echo $rows->lastname; ?>'/>			
                                                     </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            </div>
-                                            </body>
-                                            <footer>
-                                                <div class='col-lg-offset-10'>
-                                                    <small>&copy; Powered by ASUS</small>
-                                                </div>
-                                            </footer>
-                                            </html>
+                                                </div></br>
+                                                <div class='form-group <?php echo form_error('username') !== "" ? 'has-error' : ''; ?>'>
+                                                    <label for='username'>Username:</label>
+                                                    <?php echo form_error('username', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                    <div class ="input-group">
+                                                        <div class ="input-group-addon"> <span class ="glyphicon glyphicon-user"> </span> </div>
+                                                        <input type = "text" name = "username" class ='form-control' value ='<?php echo $rows->username; ?>'/>
+                                                    </div>
+                                                </div></br>
+                                                <div class='form-group <?php echo form_error('password') !== "" ? 'has-error' : ''; ?>'>
+                                                    <label for='password'>Password:</label>
+                                                    <?php echo form_error('password', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                    <div class ="input-group">
+                                                        <div class ="input-group-addon"> <span class ="glyphicon glyphicon-lock"> </span> </div>
+                                                        <input type = "text" name = "password" class ='form-control' value ='<?php echo $rows->password; ?>'/>
+                                                    </div>
+                                                </div></br>
+                                                <div class='form-group <?php echo form_error('email') !== "" ? 'has-error' : ''; ?>'>
+                                                    <label for='email'>Email:</label>
+                                                    <?php echo form_error('email', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                    <div class ="input-group"><div class ="input-group-addon"> @ </div>
+                                                        <input type = "text" name = "email" class ='form-control' value ='<?php echo $rows->email; ?>'/>
+                                                    </div>
+                                                </div></br>
+                                                <?php
+                                            }
+                                            ?>  
+
+                                            <input type ="submit" class ='btn btn-default btn-lg' name = "submit" value="Update"/>
+                                    </table>
+                                    <a href ="<?php echo base_url() . 'c_admin/detail' ?>"> Back </a>
+                                </div>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class='col-lg-offset-10'>
+        <small>&copy; Powered by ASUS</small>
+    </div>
+</footer>
+</html>

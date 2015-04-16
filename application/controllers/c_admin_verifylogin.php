@@ -38,6 +38,7 @@ class C_admin_verifylogin extends CI_Controller {
         $username = $this->input->post('username');
         //$status = $this->m_users->login($status);
         //query the database
+        $this->load->library('session');
         $result = $this->m_users->adminlogin($username, $password);
 
         if ($result) {

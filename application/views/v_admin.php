@@ -39,17 +39,18 @@
                         <div class="panel panel-default">
                             <div class="panel-heading"><h3> Login: </h3></div>
                             <div class="panel-body">
-                                <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
                                 <table class ='table table-bordered'>
-                                    <td><div class='form-group'>
+                                    <td><div class='form-group <?php echo form_error('username') !== "" ? 'has-error' : ''; ?>'>
                                             <label for="username">Username:</label>
+                                            <?php echo form_error('username', '<span id="helpBlock" class="help-block">', '</span>'); ?>
                                             <div class ="input-group">
                                                 <div class ="input-group-addon"> <span class ="glyphicon glyphicon-user"> </span> </div>
                                                 <input type = "text" name = "username" placeholder = "Enter Username" class ='form-control' id="inputError1 "value=""/>    
                                             </div>
                                         </div><br>
-                                        <div class='form-group'>
+                                        <div class='form-group <?php echo form_error('password') !== "" ? 'has-error' : ''; ?>'>
                                             <label for="password">Password:</label>
+                                            <?php echo form_error('password', '<span id="helpBlock" class="help-block">', '</span>'); ?>
                                             <div class ="input-group">
                                                 <div class ="input-group-addon"><span class="glyphicon glyphicon-lock"></span> </div>
                                                 <input type = "password" name = "password" placeholder = "Enter Password" class ='form-control' value=""/>  
@@ -57,7 +58,7 @@
                                             <div class='form-group'>
                                                 <br>
                                                 <input type ="submit" name = "Login" value="Login" class ='btn btn-primary btn-lg'/>
-                                            </div>
+                                            </div></div>
                                 </table>
                                 <a href = '<?php echo base_url() . 'c_index/' ?>'> Back </a>
                             </div>

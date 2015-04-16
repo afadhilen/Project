@@ -43,8 +43,6 @@
                                 <div class="panel-heading"><h3>Edit Data: </h3></div>
                                 <div class="panel-body">
                                     <?php
-                                    echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>');
-
                                     $bookid = $this->uri->segment(3);
                                     $this->db->where('book_id', $bookid);
                                     $this->db->from('books');
@@ -54,55 +52,62 @@
                                     foreach ($query->result() as $rows) {
                                         ?>
                                         <table class ='table table-bordered'>
-                                            <td><div class='form-group'>
+                                            <td><div class='form-group <?php echo form_error('bookid') !== "" ? 'has-error' : ''; ?>'>
                                                     <label for="bookid">Book ID:</label>
+                                                    <?php echo form_error('bookid', '<span id="helpBlock" class="help-block">', '</span>'); ?>
                                                     <div class ="input-group">
                                                         <div class ="input-group-addon"> <span class ="glyphicon glyphicon-barcode"> </span> </div>
                                                         <input type="text" name="bookid" size ='4' class='form-control' value ='<?php echo $rows->book_id; ?>'>
+                                                    </div>
+                                                </div><br>
+                                                <div class='form-group <?php echo form_error('bookname') !== "" ? 'has-error' : ''; ?>'>
+                                                    <label for="bookname">Book Name:</label>
+                                                    <?php echo form_error('bookname', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                    <div class ="input-group">
+                                                        <div class ="input-group-addon"> <span class ="glyphicon glyphicon-book"> </span> </div>
+                                                        <input type="text" name="bookname" class='form-control' value ='<?php echo $rows->name; ?>'>
+                                                    </div>
+                                                </div><br>
+                                                <div class='form-group <?php echo form_error('type') !== "" ? 'has-error' : ''; ?>'>
+                                                    <label for="type">Book Type:</label>
+                                                    <?php echo form_error('type', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                    <div class ="input-group">
+                                                        <div class ="input-group-addon"> <span class ="glyphicon glyphicon-cog"> </span> </div>
+                                                        <select name="type" class='form-control' value ='<?php echo $rows->type; ?>'>
+                                                            <option name ="comic" value="comic">Comic</option>
+                                                            <option name ="novel" value="novel">Novel</option>
+                                                            <option name ="other" value="other">Other</option>
+                                                        </select>
                                                     </div><br>
-                                                    <div class='form-group'>
-                                                        <label for="bookname">Book Name:</label>
+                                                    <div class='form-group <?php echo form_error('pcs') !== "" ? 'has-error' : ''; ?>'>
+                                                        <label for="pcs">Quantity:</label>
+                                                        <?php echo form_error('pcs', '<span id="helpBlock" class="help-block">', '</span>'); ?>
                                                         <div class ="input-group">
-                                                            <div class ="input-group-addon"> <span class ="glyphicon glyphicon-book"> </span> </div>
-                                                            <input type="text" name="bookname" class='form-control' value ='<?php echo $rows->name; ?>'>
-                                                        </div><br>
-                                                        <div class='form-group'>
-                                                            <label for="type">Book Type:</label>
-                                                            <div class ="input-group">
-                                                                <div class ="input-group-addon"> <span class ="glyphicon glyphicon-cog"> </span> </div>
-                                                                <select name="type" class='form-control' value ='<?php echo $rows->type; ?>'>
-                                                                    <option name ="comic" value="comic">Comic</option>
-                                                                    <option name ="novel" value="novel">Novel</option>
-                                                                    <option name ="other" value="other">Other</option>
-                                                                </select>
-                                                            </div><br>
-                                                            <div class='form-group'>
-                                                                <label for="pcs">Quantity:</label>
-                                                                <div class ="input-group">
-                                                                    <div class ="input-group-addon"><span class ="glyphicon glyphicon-pencil"> </span> </div>
-                                                                    <input type="text" name="pcs" size ='4' class='form-control' value ='<?php echo $rows->pcs; ?>'>
-                                                                </div>
-                                                                <br>
-                                                                <input type ="submit" class ='btn btn-default btn-lg' name = "submit" value="Update"/>
-                                                                </table>
-                                                                <a href ="<?php echo base_url() . 'c_admin/product' ?>"> Back </a>
-                                                            </div>
+                                                            <div class ="input-group-addon"><span class ="glyphicon glyphicon-pencil"> </span> </div>
+                                                            <input type="text" name="pcs" size ='4' class='form-control' value ='<?php echo $rows->pcs; ?>'>
                                                         </div>
-                                                        </br>
+                                                    </div>
+                                                    <br>
+                                                    <input type ="submit" class ='btn btn-default btn-lg' name = "submit" value="Update"/>
+                                        </table>
+                                        <a href ="<?php echo base_url() . 'c_admin/product' ?>"> Back </a>
+                                    </div>
+                                </div>
+                                </br>
 
-                                                        <?php
-                                                    }
-                                                    ?>  
+                                <?php
+                            }
+                            ?>  
 
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            </div>
-                                            </body>
-                                            <footer>
-                                                <div class='col-lg-offset-10'>
-                                                    <small>&copy; Powered by ASUS</small>
-                                                </div>
-                                            </footer>
-                                            </html>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class='col-lg-offset-10'>
+            <small>&copy; Powered by ASUS</small>
+        </div>
+    </footer>
+</html>

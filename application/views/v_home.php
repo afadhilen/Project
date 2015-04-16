@@ -26,14 +26,14 @@
                 margin-bottom: 0px;
             }
         </style>
-        
-        
+
+
     </head>
     <body>
         <div class='jumbotron'>
             <center><h1>  <h1>Store Book</h1>
                     </div>
-        <br><br>
+                    <br><br>
                     <div class ="container">
                         <div class ='row top-buffer'>
                             <div class='col-sm-6 col-xs-12'>
@@ -84,38 +84,44 @@
                                         }
                                         ?>
                                         <form action ='<?php echo base_url() . 'c_home/'; ?>' method='post' name ='store'>
-                                            <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
                                             <table class ='table table-bordered'>
-                                                <td><div class='form-group'>
+                                                <td><div class='form-group <?php echo form_error('bookid') !== "" ? 'has-error' : ''; ?>'>
                                                         <label for="bookid">Book ID:</label>
+                                                        <?php echo form_error('bookid', '<span id="helpBlock" class="help-block">', '</span>'); ?>
                                                         <div class ="input-group">
                                                             <div class ="input-group-addon"> <span class ="glyphicon glyphicon-barcode"> </span> </div>
                                                             <input type="text" name="bookid" size ='4' class='form-control' value =''>
-                                                        </div><br>
-                                                        <div class='form-group'>
-                                                            <label for="bookname">Book Name:</label>
-                                                            <div class ="input-group">
-                                                                <div class ="input-group-addon"> <span class ="glyphicon glyphicon-book"> </span> </div>
-                                                                <input type="text" name="bookname" class='form-control'>
-                                                            </div></div><br>
-                                                        <div class='form-group'>
-                                                            <label for="type">Book Type:</label>
-                                                            <div class ="input-group">
-                                                                <div class ="input-group-addon"> <span class ="glyphicon glyphicon-cog"> </span> </div>
-                                                                <select name="type" class='form-control'>
-                                                                    <option name ="comic" value="comic">Comic</option>
-                                                                    <option name ="novel" value="novel">Novel</option>
-                                                                    <option name ="other" value="other">Other</option>
-                                                                </select>
-                                                            </div></div><br>
-                                                        <div class='form-group'>
-                                                            <label for="pcs">Quantity:</label>
-                                                            <div class ="input-group">
-                                                                <div class ="input-group-addon"> <span class ="glyphicon glyphicon-pencil"> </span> </div>
-                                                                <input type="text" name="pcs" size ='4' class='form-control'>
-                                                            </div></div>
-                                                        <br>
-                                                        <input type ="submit" name = "submit" value="Store Book"  class ='btn btn-default btn-lg'/>
+                                                        </div>
+                                                    </div><br>
+                                                    <div class='form-group <?php echo form_error('bookname') !== "" ? 'has-error' : ''; ?>'>
+                                                        <label for="bookname">Book Name:</label>
+                                                        <?php echo form_error('bookname', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                        <div class ="input-group">
+                                                            <div class ="input-group-addon"> <span class ="glyphicon glyphicon-book"> </span> </div>
+                                                            <input type="text" name="bookname" class='form-control'>
+                                                        </div>
+                                                    </div><br>
+                                                    <div class='form-group <?php echo form_error('type') !== "" ? 'has-error' : ''; ?>'>
+                                                        <label for="type">Book Type:</label>
+                                                        <?php echo form_error('type', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                        <div class ="input-group">
+                                                            <div class ="input-group-addon"> <span class ="glyphicon glyphicon-cog"> </span> </div>
+                                                            <select name="type" class='form-control'>
+                                                                <option name ="comic" value="comic">Comic</option>
+                                                                <option name ="novel" value="novel">Novel</option>
+                                                                <option name ="other" value="other">Other</option>
+                                                            </select>
+                                                        </div>
+                                                    </div><br>
+                                                    <div class='form-group <?php echo form_error('pcs') !== "" ? 'has-error' : ''; ?>'>
+                                                        <label for="pcs">Quantity:</label>
+                                                        <?php echo form_error('pcs', '<span id="helpBlock" class="help-block">', '</span>'); ?>
+                                                        <div class ="input-group">
+                                                            <div class ="input-group-addon"> <span class ="glyphicon glyphicon-pencil"> </span> </div>
+                                                            <input type="text" name="pcs" size ='4' class='form-control'>
+                                                        </div></div>
+                                                    <br>
+                                                    <input type ="submit" name = "submit" value="Store Book"  class ='btn btn-default btn-lg'/>
                                             </table>
                                         </form>
                                         <a href ="<?php echo base_url() . 'c_check/' ?>"> Back </a>
