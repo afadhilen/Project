@@ -49,12 +49,10 @@ class C_home extends CI_Controller {
                 } else if (isset($book->book_id) && $book->name != $bookname) {
                     //when book id and book name is not match
                     $view_data['msg3'] = "Book ID and Book Name did not match";
-                }
-                else if (isset($book->name) && $book->name == $bookname) {
+                } else if (isset($book->name) && $book->name == $bookname) {
                     //when book id and book name is not match
                     $view_data['msg5'] = "Same Name";
-                }
-                else {
+                } else {
                     $data = array(
                         'book_id' => $bookid,
                         'name' => $bookname,
@@ -111,8 +109,8 @@ class C_home extends CI_Controller {
             $this->load->view('v_admin_data', $data);
         } else {
             //If no session, redirect to login page
-
-            echo "You don't have right to access this page! ";
+            $this->load->view('404_page');
+            //echo "You don't have right to access this page! ";
             //redirect('c_login', 'refresh');
         }
     }

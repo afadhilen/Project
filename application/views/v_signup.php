@@ -29,7 +29,7 @@
     </head>
     <body>
         <div class='jumbotron'>
-            <center><h1>  <h1>Sign Up Form</h1></center>
+            <center><h1>Sign Up Form</h1></center>
         </div>
         <br><br>
         <div class ='container'>
