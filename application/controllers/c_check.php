@@ -20,6 +20,7 @@ class C_check extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_rules('bookid', 'Book ID', 'required|max_length[4]|callback_bookrule');
 
+            $this->load->view('v_check');
             if ($this->form_validation->run() == TRUE) {
 
                 $bookid = $this->input->post('bookid');
@@ -42,7 +43,6 @@ class C_check extends CI_Controller {
                     //redirect('c_home', $view_data);
                 }
             }
-            $this->load->view('v_check');
         } else {
             //If no session, redirect to login page
             $this->load->view('404_page');
@@ -50,7 +50,9 @@ class C_check extends CI_Controller {
     }
 
     public function book_check() {
-
+if ($this->session->userdata('logged_in')) {
+            $session_data = $this->session->userdata('logged_in');
+            $data['username'] = $session_data['username'];
         $bookid = $this->uri->segment(3);
         //$bookid2 = $this->input->post('bookid');
         //$bookname = $this->input->post('bookname');
@@ -84,6 +86,11 @@ class C_check extends CI_Controller {
         $this->db->where('book_id', $bookid);
         $this->db->update('books', $data);
         $this->load->view('v_success');
+    }
+    else{
+        
+        $this->load->view('404_page');
+    }
     }
 
     public function updatebookform() {

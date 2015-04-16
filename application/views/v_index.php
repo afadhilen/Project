@@ -34,7 +34,7 @@
     <body>
 
         <div class ='jumbotron'>
-            <center>  <h1> Book Management System </h1> </center>
+            <center>  <h1> Library Management System </h1> </center>
         </div>
         <div class="container">
             <br><br>

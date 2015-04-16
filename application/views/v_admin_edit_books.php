@@ -27,7 +27,7 @@
                 margin-bottom: 0px;
             }
         </style>
-        
+
     </head>
     <body>
         <div class='jumbotron'>
@@ -77,9 +77,9 @@
                                                                 </select>
                                                             </div><br>
                                                             <div class='form-group'>
+                                                                <label for="pcs">Quantity:</label>
                                                                 <div class ="input-group">
-                                                                    <div class ="input-group-addon"> <span class ="glyphicon glyphicon-pencil"> </span> </div>
-                                                                    <label for="pcs">Quantity:</label>
+                                                                    <div class ="input-group-addon"><span class ="glyphicon glyphicon-pencil"> </span> </div>
                                                                     <input type="text" name="pcs" size ='4' class='form-control' value ='<?php echo $rows->pcs; ?>'>
                                                                 </div>
                                                                 <br>

@@ -30,11 +30,14 @@
         
        </head>
     <body>
+        <div class ="jumbotron">
+            <center><h1>Check Book</h1></center>
+        </div>
         <br><br>
         <div class="container">
             <div class ='row'>
                 <div class='col-sm-6 col-xs-12'>
-                    <div class="panel panel-primary">
+                    <div class="panel panel-default">
                         <div class="panel-heading"><h3>Insert Book ID</h3> </div>
                         <div class="panel-body">
                             <br>
@@ -55,7 +58,7 @@
                     </div>
                 </div>
                 <div class='col-sm-6 col-xs-12'>
-                    <div class="panel panel-primary">
+                    <div class="panel panel-default">
                         <div class="panel-heading"><h3>Book ID Rule: </h3> </div>
                         <div class="panel-body">
                             <ol>

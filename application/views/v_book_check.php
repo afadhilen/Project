@@ -27,13 +27,10 @@
                 margin-bottom: 0px;
             }
         </style>
-        
-        
+
+
     </head>
     <body>
-        <div class='jumbotron'>
-            <center><h1>Book Data</h1> </center>
-        </div>
         <br><br>
         <div class='col-lg-8 col-lg-offset-2'>
             <div class ='row top-buffer'>
@@ -41,7 +38,7 @@
                     <?php
                     $bookid = $this->input->post('bookid');
                     ?>
-                    <div class="panel panel-primary">
+                    <div class="panel panel-default">
                         <div class="panel-heading"><h3>Insert Book ID</h3> </div>
                         <div class="panel-body">
                             <form action ='<?php echo base_url() . 'c_check/book_check/' . $bookid; ?>' method='post'>

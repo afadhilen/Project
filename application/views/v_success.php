@@ -27,11 +27,14 @@
                 margin-bottom: 0px;
             }
         </style>
-        
-        
-        
+
+
+
     </head>
     <body>
+        <div class ="jumbotron">
+            <center><h1>Success</h1></center>
+        </div>
         <br><br>
         <div class ='container'>
             <div class='col-lg-8 col-lg-offset-2'>
@@ -40,7 +43,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading"><h3>Book Updated</h3> </div>
                             <div class="panel-body">
-                                <center><a href = "<?php echo base_url() . 'c_check/' ?>" class="btn btn-primary"> Back </a></center>
+                                <a href = "<?php echo base_url() . 'c_check/' ?>"> Back </a>
                             </div>
                         </div>
                     </div>
@@ -48,6 +51,8 @@
             </div>
         </div>
     </body>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
     <footer>
         <div class='col-lg-offset-10'>
             <small>&copy; Powered by ASUS</small>
