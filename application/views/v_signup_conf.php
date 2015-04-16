@@ -40,7 +40,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading"><h3>Account created</h3> </div>
                             <div class="panel-body">
-                                <a href = "<?php echo base_url() . 'C_login/' ?>" class="btn btn-primary"> Login </a>
+                                <a href = "<?php echo base_url() . 'c_login/' ?>" class="btn btn-primary"> Login </a>
                             </div>
                         </div>
                     </div>

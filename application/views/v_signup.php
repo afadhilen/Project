@@ -36,7 +36,7 @@
             <div class='col-lg-8 col-lg-offset-2'>
                 <div class ='row top-buffer'>
                     <div class ="col-lg-6 col-lg-offset-3">
-                        <form action ='<?php echo base_url() . 'C_signup/signup'; ?>' method='post'>
+                        <form action ='<?php echo base_url() . 'c_signup/signup'; ?>' method='post'>
                             <div class="panel panel-default">
                                 <div class="panel-heading"><h3>Fill Up Your Data: </h3></div>
                                 <div class="panel-body">

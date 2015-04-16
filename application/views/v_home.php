@@ -83,7 +83,7 @@
                                             
                                         }
                                         ?>
-                                        <form action ='<?php echo base_url() . 'C_home/'; ?>' method='post' name ='store'>
+                                        <form action ='<?php echo base_url() . 'c_home/'; ?>' method='post' name ='store'>
                                             <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
                                             <table class ='table table-bordered'>
                                                 <td><div class='form-group'>
