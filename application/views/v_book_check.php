@@ -39,7 +39,7 @@
                     $bookid = $this->input->post('bookid');
                     ?>
                     <div class="panel panel-default">
-                        <div class="panel-heading"><h3>Insert Book ID</h3> </div>
+                        <div class="panel-heading"><h3>Book Data</h3> </div>
                         <div class="panel-body">
                             <form action ='<?php echo base_url() . 'c_check/book_check/' . $bookid; ?>' method='post'>
                                 <?php
