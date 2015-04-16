@@ -36,7 +36,7 @@
             <div class='col-lg-8 col-lg-offset-2'>
                 <div class ='row top-buffer'>
                     <div class ="col-lg-6 col-lg-offset-3">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-default">
                             <div class="panel-heading"><h3>Confirmation</h3> </div>
                             <div class="panel-body">
                                 <?php
