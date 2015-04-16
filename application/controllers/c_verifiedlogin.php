@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class C_verifiedLogin extends CI_Controller {
+class C_verifiedlogin extends CI_Controller {
 
     function __construct() {
         parent::__construct();
