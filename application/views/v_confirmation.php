@@ -31,6 +31,9 @@
         
     </head>
     <body>
+         <div class ="jumbotron">
+            <center><h1>Check Book</h1></center>
+        </div>s
         <br><br>
         <div class="container">
             <div class='col-lg-8 col-lg-offset-2'>

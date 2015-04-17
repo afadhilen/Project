@@ -31,6 +31,9 @@
 
     </head>
     <body>
+         <div class ="jumbotron">
+            <center><h1>Check Book</h1></center>
+        </div>
         <br><br>
         <div class='col-lg-8 col-lg-offset-2'>
             <div class ='row top-buffer'>
@@ -108,7 +111,7 @@
                                                         ?>
                                                         </table>
                                                         </form>
-                                                       <!-- <a href ="<?php echo base_url() . 'c_check/' ?>"> Back </a> -->
+                                                       <a href ="<?php echo base_url() . 'c_check/' ?>"> Back </a>
                                                     </div>
                                                 </div>
                                             </div>

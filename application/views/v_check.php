@@ -42,10 +42,10 @@
                         <div class="panel-body">
                             <br>
                             <form action ='<?php echo base_url() . 'c_check/'; ?>' method='post' name ='store'>
-                                <?php echo validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
                                 <table class ='table table-bordered'>
-                                    <td><div class='form-group'>
+                                    <td><div class='form-group <?php echo form_error('bookid') !== "" ? 'has-error' : ''; ?>'>
                                             <label for="bookid">Book ID:</label>
+                                            <?php echo form_error('bookid', '<span id="helpBlock" class="help-block">', '</span>'); ?>
                                             <div class ="input-group">
                                                 <div class ="input-group-addon"> <span class ="glyphicon glyphicon-barcode"> </span> </div>
                                                 <input type="text" name="bookid" class='form-control '>

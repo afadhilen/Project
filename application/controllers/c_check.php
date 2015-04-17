@@ -13,22 +13,21 @@ class C_check extends CI_Controller {
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
-            //$this->load->view('v_home', $data);
 
             $view_data = array();
 
             $this->load->library('form_validation');
             $this->form_validation->set_rules('bookid', 'Book ID', 'required|max_length[4]|callback_bookrule');
 
-            $this->load->view('v_check');
-            if ($this->form_validation->run() == TRUE) {
 
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('v_check');
+            }
+            else{
                 $bookid = $this->input->post('bookid');
 
                 $this->load->model('m_products');
                 $book = $this->m_products->store($bookid);
-
-                // if (isset($book->book_id) && ( $book->book_id== $bookid))
 
                 if (isset($book->book_id)) {
                     if ($book->book_id == $bookid) {
@@ -50,16 +49,49 @@ class C_check extends CI_Controller {
     }
 
     public function book_check() {
-if ($this->session->userdata('logged_in')) {
+        if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
             $data['username'] = $session_data['username'];
-        $bookid = $this->uri->segment(3);
-        //$bookid2 = $this->input->post('bookid');
-        //$bookname = $this->input->post('bookname');
-        $pcs = $this->input->post('pcs');
+            $bookid = $this->uri->segment(3);
+            //$bookid2 = $this->input->post('bookid');
+            //$bookname = $this->input->post('bookname');
+            $pcs = $this->input->post('pcs');
 
-        $this->load->model('m_products');
-        $book = $this->m_products->store($bookid);
+            $this->load->model('m_products');
+            $book = $this->m_products->store($bookid);
+
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('bookid', 'Book ID', 'required|max_length[4]|callback_bookrule');
+            $this->form_validation->set_rules('bookname', 'Book Name', 'required');
+            $this->form_validation->set_rules('type', 'Type', 'required');
+            $this->form_validation->set_rules('pcs', 'Quantity', 'required|integer');
+
+            if ($this->form_validation->run() == TRUE) {
+                $this->updatebookform();
+            } else {
+                if (isset($book->book_id)) {
+                    if ($book->book_id == $bookid) {
+                        $data = array(
+                            'book_id' => $bookid,
+                            'name' => $book->name,
+                            'type' => $book->type,
+                            'pcs' => $pcs,
+                        );
+                        $this->db->where('book_id', $bookid);
+                        $this->db->update('books', $data);
+                    }
+                }
+            }
+            $this->db->where('book_id', $bookid);
+            $this->db->update('books', $data);
+            $this->load->view('v_success');
+        } else {
+
+            $this->load->view('404_page');
+        }
+    }
+
+    public function updatebookform() {
 
         $this->load->library('form_validation');
         $this->form_validation->set_rules('bookid', 'Book ID', 'required|max_length[4]|callback_bookrule');
@@ -67,33 +99,6 @@ if ($this->session->userdata('logged_in')) {
         $this->form_validation->set_rules('type', 'Type', 'required');
         $this->form_validation->set_rules('pcs', 'Quantity', 'required|integer');
 
-        if ($this->form_validation->run() == TRUE) {
-            $this->updatebookform();
-        } else {
-            if (isset($book->book_id)) {
-                if ($book->book_id == $bookid) {
-                    $data = array(
-                        'book_id' => $bookid,
-                        'name' => $book->name,
-                        'type' => $book->type,
-                        'pcs' => $pcs,
-                    );
-                    $this->db->where('book_id', $bookid);
-                    $this->db->update('books', $data);
-                }
-            }
-        }
-        $this->db->where('book_id', $bookid);
-        $this->db->update('books', $data);
-        $this->load->view('v_success');
-    }
-    else{
-        
-        $this->load->view('404_page');
-    }
-    }
-
-    public function updatebookform() {
 
         if ($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');

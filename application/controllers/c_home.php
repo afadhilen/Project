@@ -32,13 +32,6 @@ class C_home extends CI_Controller {
                 $this->load->model('m_products');
                 $book = $this->m_products->store($bookid, $bookname);
 
-                /**
-                  $this->db->select('*');
-                  $this->db->from('books');
-                  $this->db->where('book_id', $bookid);
-                  $book = $this->db->get()->row();
-                 * 
-                 */
                 if (isset($book->book_id) && $book->name == $bookname) {
                     //when book id and book name is exist
                     $view_data['msg1'] = "Book $bookid and $bookname already exist!";
